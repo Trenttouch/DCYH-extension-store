@@ -1,0 +1,7 @@
+corruption_business_point = { # 堕落经营点数（特殊资源） *因为不算前期的必要资源，就没必要做缺乏的惩罚
+	tradable = no
+	max = 10000
+	ai_weight = {
+		weight = 1
+	}
+}

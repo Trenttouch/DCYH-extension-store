@@ -1,0 +1,57 @@
+# # SUBJECT_suc_beauty_tributary:0 "绝色朝贡国"
+# # SUBJECT_DESC_suc_beauty_tributary:0 "绝色朝贡国是是附属国的一种，他们在绝大多数方面保持独立，
+# # 但每月需要朝贡§Y50%§!的$sr_beauty$，§Y25%§!的$excellent_slave$，§Y15%§!的$energy$、$minerals$、
+# # $food$、$alloys$给宗主国享用。"
+
+# suc_beauty_tributary = {
+# 	can_expand = yes # 是否允许拓张
+# 	can_be_integrated = no # 是否能被整合
+# 	joins_overlord_wars = yes
+# 	calls_overlord_to_war = yes
+# 	can_do_diplomacy = no
+
+# 	diplo_threat = 2.0
+
+# 	intel_from_being_subject = 30
+# 	intel_from_being_overlord = 40
+
+# 	subject_tax_rate = {
+# 		energy = 0.15
+# 		minerals = 0.15
+# 		food = 0.15
+# 		alloys = 0.15
+# 		consumer_goods = 0.15
+# 		sr_beauty = 0.50
+# 		excellent_slave = 0.25
+# 	}
+
+# 	can_switch_to = { # 可转化为其他附庸形式
+# 		vassal protectorate 
+# 	}
+
+# 	potential = { # 条件允许是正在外交界面显示（讲道理是不应该的，只能200事件触发，为了不额外写战争目标……还是加一个可以由分公司转化）
+# 		is_country_type = default
+# 		is_subject_type = subsidiary
+# 		from = { has_valid_civic = civic_corruption_syndicate }
+# 		has_been_declared_crisis = no
+# 	}
+
+# 	effect = {
+# 		if = {
+# 			limit = {
+# 				from = {
+# 					OR = {
+# 						is_country_type_with_subjects = no
+# 						not = { has_valid_civic = civic_corruption_syndicate }
+# 					}
+# 				}
+# 			}
+# 			set_subject_of = {
+# 				who = none
+# 			}
+# 			break = yes
+# 		}
+# 	}
+# }
+
+# # ……现在考量，或许不要重现比较好……

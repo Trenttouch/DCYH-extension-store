@@ -1,0 +1,136 @@
+building_corp_manage_center = { # 我方主要建筑：企业管理中心
+	base_buildtime = @b1_time
+	base_cap_amount = 1	#数量限制
+	can_be_disabled = no
+	empire_limit = { base = 1 }
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_corruption_syndicate
+			has_country_flag = corruption_syndicate_office_unlock
+		}
+		exists = planet
+		planet = { is_capital = yes }
+	}
+	allow = {
+		buildings_simple_allow = yes
+	}
+	
+	country_modifier = { # 国家修正
+		add_base_country_intel = 10 # 基础情报等级+10
+		spy_network_levels_add = 10 # 最大渗透等级+10
+	}
+
+	planet_modifier = {
+		job_sultry_secretary_add = 2
+		job_politician_add = -2
+	}
+
+	on_built = { # 建造完成时
+		hidden_effect = { 
+			owner = { 
+				country_event = { id = corruption_syndicate_panel.999 days = 10 }
+			} 
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = { # 建筑消耗
+			minerals = @b1_minerals
+			influence = 100
+		}
+		produces = { # 生产
+		}
+		upkeep = { # 维护费
+			energy = 4
+		}
+	}
+	ai_weight = { # 如果这里ai禁用就写1
+		weight = 1000
+	}
+}
+
+
+# building_corruption_supervision_jail = { # 对方反制建筑：腐化监管所
+# 	base_buildtime = @b1_time
+# 	category = government
+
+# 	potential = {
+# 		owner = { 
+# 			is_regular_empire = yes 
+# 			has_country_flag = corruption_syndicate_office_established
+# 		}
+# 		NOT = { has_modifier = slave_colony }
+# 	}
+# 	allow = {
+# 		hidden_trigger = {
+# 			OR = {
+# 				AND = {
+# 					owner = { 
+# 						is_ai = no
+# 						has_country_flag = corruption_syndicate_office_established
+# 					}
+# 					planet = {
+# 						has_branch_office = yes
+# 						branch_office_owner = { has_valid_civic = civic_corruption_syndicate }
+# 					}
+# 				}
+# 				AND = {
+# 					planet_crime > 15
+# 					planet = {
+# 						has_branch_office = yes
+# 						branch_office_owner = { has_valid_civic = civic_corruption_syndicate }
+# 					}
+# 					owner = { has_country_flag = corruption_syndicate_office_established }
+# 					NOR = {
+# 						num_buildings = { type = building_corruption_supervision_jail value = 3 }
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	prerequisites = {
+# 		"tech_planetary_government"
+# 	}
+# 	triggered_desc = {
+# 		text = job_corruption_ombudsman_effect_desc # 额外的职业文本
+# 	}
+# 	show_tech_unlock_if = {
+# 		is_regular_empire = yes
+# 	}
+	
+# 	destroy_trigger = {
+# 		exists = owner
+# 		OR = {
+# 			NOT = {	owner = { is_regular_empire = yes }	}
+# 			AND = {
+# 				owner = { is_ai = yes } #Players dont like random buildings blowing up
+# 				planet = { has_branch_office = no }
+# 			}#This way the AI gets to reclaim its building slots that it sunk into this expense
+# 		}
+# 	}
+
+# 	planet_modifier = {
+# 		job_corruption_ombudsman_add = 2 # ai不造是收益问题，笑死
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { has_modifier = fallen_kicker }
+# 		}
+# 		job_corruption_ombudsman_add = 2
+# 	}
+
+# 	resources = {
+# 		category = planet_buildings
+# 		cost = {
+# 			minerals = @b1_minerals
+# 		}
+# 		upkeep = {
+# 			energy = 2
+# 		}
+# 	}
+# }

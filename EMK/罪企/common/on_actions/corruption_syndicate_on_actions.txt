@@ -1,0 +1,111 @@
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		corruption_syndicate_panel.996  # 面对特殊情况的开局，例如新的狗开或者过去的两个联邦开等，在开局便有国家联系的情况下思考的解决办法
+	}
+}
+
+
+
+# Executed right after country has established communications with another country
+# This = Country which established the communications
+# From = Country which communications were established with
+on_post_communications_established = {
+	events = {
+		corruption_syndicate_panel.997 # 第一次建立通信时开放企业中心的建造权限
+	}
+}
+
+# # THIS = Planet: Branch office planet
+# # FROM = Country: Branch office owner
+# on_branch_office_established = {
+# 	events = {
+# 		corruption_syndicate_panel.996
+# 	}
+# }
+
+# # THIS = Planet: Branch office planet
+# # FROM = Country: Branch office owner
+# on_branch_office_closed = {
+# 	events = {
+# 		corruption_syndicate_panel.703 # 分部被关闭时buff删除
+# 	}
+# }
+
+# Triggers when trying to open the diplomacy view for countries with custom diplomacy.
+# Country scope
+# This = target country (player)
+# From = source country
+on_custom_diplomacy = {
+	events = {
+		corruption_syndicate_panel.1000 # 面板触发事件
+	}
+}
+
+#A building construction has been completed.
+# This = Planet
+on_building_complete = {
+	events = {
+		corruption_syndicate_buildings.0 # 一级建筑建造完成事件
+	}
+}
+
+on_building_upgraded = {
+	events = {
+		corruption_syndicate_buildings.2 # 二级建筑升级完成事件
+		corruption_syndicate_buildings.4 # 三级建筑升级完成事件
+	}
+}
+
+# # A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# # This = Country
+# on_tech_increased = {
+# 	events = {
+# 		corruption_syndicate_panel.702 # 科技完成时添加buff的事件
+# 	}
+# }
+
+# Triggers country_event for the attacker upon victory
+# (Before controller is switched)
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+# IDENTITIES: attacker is the side that "IsHostile" to
+# the planet controller; e.g. spawned monster armies
+# are attackers, but if they win and the player attempts
+# to retake the planet, the player is the attacker
+on_planet_attackers_win = {
+	events = {
+		corruption_syndicate_panel.40
+	}
+}
+
+# Triggers country_event for the defender upon defeat
+# This = country, planet owner
+# From = country, attack leader
+# FromFrom = planet
+on_planet_defenders_lose = {
+	events = {
+		corruption_syndicate_panel.39
+	}
+}
+
+# Triggers country_event for the defender upon victory
+# Root = country, planet owner
+# From = country, attack leader
+# FromFrom = planet
+on_planet_defenders_win = {
+	events = {
+		corruption_syndicate_panel.37 # 反抗成功，入侵失败
+	}
+}
+
+# Triggers country_event for the attacker upon defeat
+# This = country, attack leader
+# From = country, planet owner
+# FromFrom = planet
+on_planet_attackers_lose = { # 因为这边事件的入侵者是ai，所以就不写ai进攻失败的事件了
+	events = {
+	}
+}
+

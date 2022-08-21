@@ -1,0 +1,428 @@
+namespace = corruption_syndicate_buildings
+
+planet_event = { # 一级建筑建造完成buff事件
+	id = corruption_syndicate_buildings.0
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { # or里面放一级建筑的列表用来检测
+		is_lv1_office_buildings = yes
+	}
+	immediate = {
+		save_event_target_as = boet_temp
+		switch = {
+			trigger = last_building_changed
+			building_kinky_salon_lv1 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.101 } } }
+			building_succubus_nightclub_lv1 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.102 } } }
+			building_industrial_integration_lv1 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.103 } } }
+			building_aphrodisiac_lab_lv1 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.104 } } }
+			building_lust_preach_lv1 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.105 } } }
+			building_prostitution_harbour_lv1 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.106 } } }
+		}
+	}
+}
+
+planet_event = { # 二级建筑升级完成buff事件
+	id = corruption_syndicate_buildings.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { # or里面放二级建筑的列表用来检测
+		is_lv2_office_buildings = yes
+	}
+	immediate = {
+		save_event_target_as = boet_temp
+		switch = {
+			trigger = last_building_changed
+			building_kinky_salon_lv2 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.201 } } }
+			building_succubus_nightclub_lv2 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.202 } } }
+			building_industrial_integration_lv2 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.203 } } }
+			building_aphrodisiac_lab_lv2 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.204 } } }
+			building_lust_preach_lv2 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.205 } } }
+			building_prostitution_harbour_lv2 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.206 } } }
+		}
+	}
+}
+
+planet_event = { # 三级建筑升级完成buff事件
+	id = corruption_syndicate_buildings.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { # or里面放三级建筑的列表用来检测
+		is_lv3_office_buildings = yes
+	}
+	immediate = {
+		save_event_target_as = boet_temp
+		switch = {
+			trigger = last_building_changed
+			building_kinky_salon_lv3 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.301 } } }
+			building_succubus_nightclub_lv3 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.302 } } }
+			building_industrial_integration_lv3 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.303 } } }
+			building_aphrodisiac_lab_lv3 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.304 } } }
+			building_lust_preach_lv3 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.305 } } }
+			building_prostitution_harbour_lv3 = { this.branch_office_owner = { country_event = { id = corruption_syndicate_buildings.306 } } }
+		}
+	}
+}
+
+# #####建筑升级完成事件，由corruption_syndicate_buildings.0，corruption_syndicate_buildings.2和corruption_syndicate_buildings.4辅助判定建筑类型
+# #####事件编号101~1xx为1级建筑首次建造完成的事件，xx为建筑序号
+country_event = {
+	id = corruption_syndicate_buildings.101
+	title = "corruption_syndicate_buildings.101.name"
+	desc = "corruption_syndicate_buildings.101.desc"
+	picture = GFX_evt_office_building_101
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_kinky_salon_lv1 }
+		NOT = { has_country_flag = ignore_kinky_salon_lv1 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.101.a"
+	}
+	option = {
+		set_country_flag = ignore_kinky_salon_lv1
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.102
+	title = "corruption_syndicate_buildings.102.name"
+	desc = "corruption_syndicate_buildings.102.desc"
+	picture = GFX_evt_office_building_102
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_succubus_nightclub_lv1 }
+		NOT = { has_country_flag = ignore_succubus_nightclub_lv1 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.102.a"
+	}
+	option = {
+		set_country_flag = ignore_succubus_nightclub_lv1
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.103
+	title = "corruption_syndicate_buildings.103.name"
+	desc = "corruption_syndicate_buildings.103.desc"
+	picture = GFX_evt_office_building_103
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_industrial_integration_lv1 }
+		NOT = { has_country_flag = ignore_industrial_integration_lv1 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.103.a"
+	}
+	option = {
+		set_country_flag = ignore_industrial_integration_lv1
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.104
+	title = "corruption_syndicate_buildings.104.name"
+	desc = "corruption_syndicate_buildings.104.desc"
+	picture = GFX_evt_office_building_104
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_aphrodisiac_lab_lv1 }
+		NOT = { has_country_flag = ignore_aphrodisiac_lab_lv1 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.104.a"
+	}
+	option = {
+		set_country_flag = ignore_aphrodisiac_lab_lv1
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.105
+	title = "corruption_syndicate_buildings.105.name"
+	desc = "corruption_syndicate_buildings.105.desc"
+	picture = GFX_evt_office_building_105
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_lust_preach_lv1 }
+		NOT = { has_country_flag = ignore_lust_preach_lv1 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.105.a"
+	}
+	option = {
+		set_country_flag = ignore_lust_preach_lv1
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.106
+	title = "corruption_syndicate_buildings.106.name"
+	desc = "corruption_syndicate_buildings.106.desc"
+	picture = GFX_evt_office_building_106
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_prostitution_harbour_lv1 }
+		NOT = { has_country_flag = ignore_prostitution_harbour_lv1 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.106.a"
+	}
+	option = {
+		set_country_flag = ignore_prostitution_harbour_lv1
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+# #####事件编号201~2xx为2级建筑首次升级完成的事件，xx为建筑序号
+country_event = {
+	id = corruption_syndicate_buildings.201
+	title = "corruption_syndicate_buildings.201.name"
+	desc = "corruption_syndicate_buildings.201.desc"
+	picture = GFX_evt_office_building_201
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_kinky_salon_lv2 }
+		NOT = { has_country_flag = ignore_kinky_salon_lv2 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.201.a"
+	}
+	option = {
+		set_country_flag = ignore_kinky_salon_lv2
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.202
+	title = "corruption_syndicate_buildings.202.name"
+	desc = "corruption_syndicate_buildings.202.desc"
+	picture = GFX_evt_office_building_202
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_succubus_nightclub_lv2 }
+		NOT = { has_country_flag = ignore_succubus_nightclub_lv2 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.202.a"
+	}
+	option = {
+		set_country_flag = ignore_succubus_nightclub_lv2
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.203
+	title = "corruption_syndicate_buildings.203.name"
+	desc = "corruption_syndicate_buildings.203.desc"
+	picture = GFX_evt_office_building_203
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_industrial_integration_lv2 }
+		NOT = { has_country_flag = ignore_industrial_integration_lv2 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.203.a"
+	}
+	option = {
+		set_country_flag = ignore_industrial_integration_lv2
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.204
+	title = "corruption_syndicate_buildings.204.name"
+	desc = "corruption_syndicate_buildings.204.desc"
+	picture = GFX_evt_office_building_204
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_aphrodisiac_lab_lv2 }
+		NOT = { has_country_flag = ignore_aphrodisiac_lab_lv2 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.204.a"
+	}
+	option = {
+		set_country_flag = ignore_aphrodisiac_lab_lv2
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.205
+	title = "corruption_syndicate_buildings.205.name"
+	desc = "corruption_syndicate_buildings.205.desc"
+	picture = GFX_evt_office_building_205
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_lust_preach_lv2 }
+		NOT = { has_country_flag = ignore_lust_preach_lv2 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.205.a"
+	}
+	option = {
+		set_country_flag = ignore_lust_preach_lv2
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.206
+	title = "corruption_syndicate_buildings.206.name"
+	desc = "corruption_syndicate_buildings.206.desc"
+	picture = GFX_evt_office_building_206
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_prostitution_harbour_lv2 }
+		NOT = { has_country_flag = ignore_prostitution_harbour_lv2 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.206.a"
+	}
+	option = {
+		set_country_flag = ignore_prostitution_harbour_lv2
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+# #####事件编号301~3xx为3级建筑首次升级完成的事件，能够有直接操控和暗中操控的选项，需要思考如何实现，xx为建筑序号
+country_event = {
+	id = corruption_syndicate_buildings.301
+	title = "corruption_syndicate_buildings.301.name"
+	desc = "corruption_syndicate_buildings.301.desc"
+	picture = GFX_evt_office_building_301
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_kinky_salon_lv3 }
+		NOT = { has_country_flag = ignore_kinky_salon_lv3 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.301.a"
+	}
+	option = {
+		set_country_flag = ignore_kinky_salon_lv3
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.302
+	title = "corruption_syndicate_buildings.302.name"
+	desc = "corruption_syndicate_buildings.302.desc"
+	picture = GFX_evt_office_building_302
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_succubus_nightclub_lv3 }
+		NOT = { has_country_flag = ignore_succubus_nightclub_lv3 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.302.a"
+	}
+	option = {
+		set_country_flag = ignore_succubus_nightclub_lv3
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.303
+	title = "corruption_syndicate_buildings.303.name"
+	desc = "corruption_syndicate_buildings.303.desc"
+	picture = GFX_evt_office_building_303
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_industrial_integration_lv3 }
+		NOT = { has_country_flag = ignore_industrial_integration_lv3 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.303.a"
+	}
+	option = {
+		set_country_flag = ignore_industrial_integration_lv3
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.304
+	title = "corruption_syndicate_buildings.304.name"
+	desc = "corruption_syndicate_buildings.304.desc"
+	picture = GFX_evt_office_building_304
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_aphrodisiac_lab_lv3 }
+		NOT = { has_country_flag = ignore_aphrodisiac_lab_lv3 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.304.a"
+	}
+	option = {
+		set_country_flag = ignore_aphrodisiac_lab_lv3
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.305
+	title = "corruption_syndicate_buildings.305.name"
+	desc = "corruption_syndicate_buildings.305.desc"
+	picture = GFX_evt_office_building_305
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_lust_preach_lv3 }
+		NOT = { has_country_flag = ignore_lust_preach_lv3 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.305.a"
+	}
+	option = {
+		set_country_flag = ignore_lust_preach_lv3
+		name = "corruption_syndicate.notagain"
+	}
+}
+
+country_event = {
+	id = corruption_syndicate_buildings.306
+	title = "corruption_syndicate_buildings.306.name"
+	desc = "corruption_syndicate_buildings.306.desc"
+	picture = GFX_evt_office_building_306
+	location = event_target:boet_temp
+	is_triggered_only = yes
+	trigger = {
+		# event_target:boet_temp = { has_building = building_prostitution_harbour_lv3 }
+		NOT = { has_country_flag = ignore_prostitution_harbour_lv3 }
+	}
+	option = {
+		name = "corruption_syndicate_buildings.306.a"
+	}
+	option = {
+		set_country_flag = ignore_prostitution_harbour_lv3
+		name = "corruption_syndicate.notagain"
+	}
+}

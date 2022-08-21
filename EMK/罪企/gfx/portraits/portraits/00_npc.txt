@@ -1,0 +1,5 @@
+portraits = {
+	npc000 = {
+		texturefile = "gfx/models/portraits/npc/npc000.png"
+	}
+}

@@ -1,0 +1,33 @@
+is_lv1_office_buildings = {
+	OR = {
+		last_building_changed = building_kinky_salon_lv1
+		last_building_changed = building_succubus_nightclub_lv1
+		last_building_changed = building_industrial_integration_lv1 
+		last_building_changed = building_aphrodisiac_lab_lv1
+		last_building_changed = building_lust_preach_lv1
+		last_building_changed = building_prostitution_harbour_lv1
+	}
+}
+
+is_lv2_office_buildings = {
+	OR = {
+		last_building_changed = building_kinky_salon_lv2
+		last_building_changed = building_succubus_nightclub_lv2
+		last_building_changed = building_industrial_integration_lv2
+		last_building_changed = building_aphrodisiac_lab_lv2
+		last_building_changed = building_lust_preach_lv2
+		last_building_changed = building_prostitution_harbour_lv2
+	}
+}
+
+is_lv3_office_buildings = {
+	OR = {
+		last_building_changed = building_kinky_salon_lv3
+		last_building_changed = building_succubus_nightclub_lv3
+		last_building_changed = building_industrial_integration_lv3
+		last_building_changed = building_aphrodisiac_lab_lv3
+		last_building_changed = building_lust_preach_lv3
+		last_building_changed = building_prostitution_harbour_lv3
+	}
+}
+

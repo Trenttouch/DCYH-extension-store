@@ -1,0 +1,476 @@
+#####管控中心和反制建筑岗位####################################
+# 妖艳秘书
+sultry_secretary = {
+	category = ruler
+	condition_string = RULER_JOB_TRIGGER
+	# icon = 
+	building_icon = building_corp_manage_center # 要改一个图片来
+	clothes_texture_index = 2
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	is_capped_by_modifier = yes # 限制由修整器修改数量
+	possible_precalc = can_fill_ruler_job
+	can_set_priority = yes
+	contributes_to_diplo_weight = no
+
+	possible = {
+		is_has_pure_trait = no
+		is_has_lust_trait = yes
+	}
+	country_modifier = {
+		envoys_add = 1
+	}
+	planet_modifier = {
+		trade_value_add = 10
+		planet_amenities_add = 5
+	}
+	
+	resources = {
+		category = planet_erotic
+		produces = {
+			unity = 6
+			corruption_business_point = 1
+		}
+		upkeep = {
+			consumer_goods = 3
+		}
+	}
+	weight = {
+		weight = @ruler_job_weight
+	}
+}
+
+#####分部建筑岗位#############################################
+# 腐败执法者
+# 罪犯岗位
+# 产出：
+# 行星修正
+# 犯罪度+25
+# 稳定度+5
+corrupted_enforcer = {
+	category = criminal
+	# icon = 
+	building_icon = building_kinky_salon_lv1
+	clothes_texture_index = 2
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	is_capped_by_modifier = yes # 限制由修整器修改数量
+	contributes_to_diplo_weight = no
+	can_set_priority = no
+	ignores_favorite = yes
+	possible = {
+		# check that this is not a robot in servitude
+		NOT = {
+			has_citizenship_type = {
+				country = owner
+				type = citizenship_robot_servitude
+			}
+		}
+		owner = {
+			is_gestalt = no
+		}
+	}
+	planet_modifier = {
+		planet_crime_add = 25
+		planet_stability_add = 5
+	}
+	pop_modifier = {
+		pop_defense_armies_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				has_modifier = anticrime_campaign
+			}
+		}
+		modifier = {
+			planet_crime_add = 10
+		}
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 2
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_active_tradition = tr_domination_judgment_corps
+				}
+			}
+			unity = 1
+		}
+		upkeep = {
+			trigger = {
+				exists = planet
+				planet = {
+					has_modifier = anticrime_campaign
+				}
+			}
+			energy = 2
+		}
+	}
+	weight = {
+		weight = @criminal_job_weight
+	}
+}
+
+# 腐败官僚
+# 罪犯岗位
+# 维护费：2消费品25电
+# 产出：6凝聚力
+# 星球修正：
+# +3舒适度
+# +25贸易值
+corrupted_politician = {
+	category = criminal
+	building_icon = building_kinky_salon_lv1
+	clothes_texture_index = 2
+	# icon = 
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	is_capped_by_modifier = yes # 限制由修整器修改数量
+	contributes_to_diplo_weight = no
+	can_set_priority = no
+	ignores_favorite = yes
+	possible = {
+		# check that this is not a robot in servitude
+		NOT = {
+			has_citizenship_type = {
+				country = owner
+				type = citizenship_robot_servitude
+			}
+		}
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 3
+		trade_value_add = 50
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			planet_amenities_add = 0.6
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			planet_amenities_add = -0.6
+		}
+	}
+
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 6
+		}
+		upkeep = {
+			energy = 50
+			consumer_goods = 2
+		}
+	}
+
+	weight = {
+		weight = @criminal_job_weight
+	}
+}
+
+# 嫖客
+# 罪犯岗位
+# 产出：
+# 犯罪度+5
+# 犯罪企业贸易值+10
+# 人口增长速度+5%
+whoremaster = {
+	category = criminal
+	# icon = 
+	building_icon = building_succubus_nightclub_lv1
+	clothes_texture_index = 2
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	is_capped_by_modifier = yes # 限制由修整器修改数量
+	contributes_to_diplo_weight = no
+	can_set_priority = no
+	ignores_favorite = yes
+	possible = {
+		# check that this is not a robot in servitude
+		NOT = {
+			has_citizenship_type = {
+				country = owner
+				type = citizenship_robot_servitude
+			}
+		}
+		owner = {
+			is_gestalt = no
+		}
+	}
+	planet_modifier = {
+		planet_crime_add = 5
+		branch_office_criminal_syndicate_value_add = 10
+		pop_growth_speed = 0.05
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			energy = 2
+			minerals = 2
+			food = 2
+			consumer_goods = 1
+			alloys = 0.5
+		}
+	}
+	weight = {
+		weight = @criminal_job_weight
+	}
+}
+
+# 邪恶科学家
+# 罪犯岗位
+# 维护费2消费品
+# 产出：三项科研6
+# 犯罪度+10
+# 人口增长速度-1%
+erotic_genius = {
+	category = criminal
+	# icon = 
+	building_icon = building_aphrodisiac_lab_lv1
+	clothes_texture_index = 2
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	is_capped_by_modifier = yes # 限制由修整器修改数量
+	contributes_to_diplo_weight = no
+	can_set_priority = no
+	ignores_favorite = yes
+	possible = {
+		# check that this is not a robot in servitude
+		NOT = {
+			has_citizenship_type = {
+				country = owner
+				type = citizenship_robot_servitude
+			}
+		}
+		owner = {
+			is_gestalt = no
+		}
+	}
+	planet_modifier = {
+		planet_crime_add = 10
+		pop_growth_speed = -0.05
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			physics_research = 6
+			engineering_research = 6
+			society_research = 6
+		}
+		upkeep = {
+			consumer_goods = 4
+		}
+	}
+
+	weight = {
+		weight = @criminal_job_weight
+	}
+}
+
+# 色欲传道者
+# 罪犯岗位
+# 星球修正：舒适度+10，幸福度+5%，唯心主义思潮吸引力+25%
+# 产出资源：4凝聚力
+lust_preacher = {
+	category = criminal
+	# icon = 
+	building_icon = building_lust_preach_lv1
+	clothes_texture_index = 2
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	is_capped_by_modifier = yes # 限制由修整器修改数量
+	contributes_to_diplo_weight = no
+	can_set_priority = no
+	ignores_favorite = yes
+	possible = {
+		# check that this is not a robot in servitude
+		NOT = {
+			has_citizenship_type = {
+				country = owner
+				type = citizenship_robot_servitude
+			}
+		}
+		owner = {
+			is_gestalt = no
+		}
+	}
+	planet_modifier = {
+		planet_amenities_add = 10
+		pop_happiness = 0.05
+		pop_ethic_spiritualist_attraction_mult = 0.25 
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 4
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	weight = {
+		weight = @criminal_job_weight
+	}
+}
+
+# 肉欲雇佣兵
+# 罪犯岗位
+# 星球修正：犯罪度+20，犯罪分部贸易值+10
+pornographic_mercenary = {
+	category = criminal
+	# icon = 
+	building_icon = building_prostitution_harbour_lv1
+	clothes_texture_index = 2
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	is_capped_by_modifier = yes # 限制由修整器修改数量
+	contributes_to_diplo_weight = no
+	can_set_priority = no
+	ignores_favorite = yes
+	possible = {
+		# check that this is not a robot in servitude
+		NOT = {
+			has_citizenship_type = {
+				country = owner
+				type = citizenship_robot_servitude
+			}
+		}
+		owner = {
+			is_gestalt = no
+		}
+	}
+	planet_modifier = {
+		planet_crime_add = 50
+		branch_office_criminal_syndicate_value_add = 10
+	}
+	resources = {
+		category = planet_jobs
+		upkeep = {
+			energy = 2
+		}
+	}
+	weight = {
+		weight = @criminal_job_weight
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

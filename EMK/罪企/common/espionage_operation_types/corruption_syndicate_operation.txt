@@ -1,0 +1,655 @@
+# @diff_t0 = 4
+# @diff_t1 = 5
+# @diff_t2 = 6
+# @diff_t3 = 7
+# @diff_t4 = 8
+# @diff_t5 = 9
+# @diff_t6 = 10
+# @diff_t7 = 11
+# @diff_t8 = 12
+# @diff_t9 = 13
+
+@operationTargetedByTimer = 10800 #30 years during which the effects of an operation may be felt by select Spy Network events
+
+# this = operation
+# from = operation target
+# 促进战略收缩（仅对企业政体国家可用）
+# 剥离冗余资产（仅对企业政体国家可用）
+# 煽动国有化改组（仅对企业政体国家可用）
+# 将国家思潮往和平主义转移
+# 将国家思潮往亲外主义转移
+# 建立循环卖淫产业链
+# 摧毁军用舰队
+# 摧毁空间站
+
+# 促进战略收缩（仅对企业政体国家可用）
+# 为目标国家添加分部花费+500%的帝国修正，持续10年
+# 类别：操控信息，密谋
+# 行动难度：6
+# 需要渗透等级：30
+# 花费：50淫罪技艺
+# 行动维护费：1淫罪技艺
+# 我们的商业间谍被派去色诱市场分析师，让他们向高层传达经济危机可能到来的结论，使执行层内部对扩大投资产生分歧。
+operation_facilitate_strategic_contraction = {
+	target = none
+	categories = {
+		op_cat_manipulation # 操控信息
+		op_cat_diplomacy # 外交
+	}
+	picture = GFX_evt_syndicate_operation_101
+	desc = operation_facilitate_strategic_contraction_desc
+
+	stages = 4 # 阶段数
+	spy_power_cost = 30 # 渗透等级
+
+	resources = {
+		category = operations
+		cost = {
+			corruption_business_point = 100
+		}
+		upkeep = {
+			corruption_business_point = 1
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_valid_civic = civic_corruption_syndicate 
+			has_technology = tech_building_unlock_II
+		}
+		target = { 
+			has_authority = auth_corporate 
+			is_cg_empire = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+	}
+	stage = { 
+		difficulty = 6
+		icon = GFX_espionage_chapter_icon_document
+		event = corruption_syndicate_operation.101
+	}
+	stage = { 
+		difficulty = 6
+		icon = GFX_espionage_chapter_icon_surveillance
+		event = corruption_syndicate_operation.102
+	}
+	stage = { 
+		difficulty = 6
+		icon = GFX_espionage_chapter_icon_security
+		event = corruption_syndicate_operation.103
+	}
+	stage = { 
+		difficulty = 6
+		icon = GFX_espionage_chapter_icon_success
+		event = corruption_syndicate_operation.104
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = {
+			RANDOM_EVENTS = operation_random_events_low_stakes
+		}
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+# 剥离冗余资产（仅对企业政体国家可用）
+# 如果成功：关闭目标国家设立的所有分部
+# 类别：操控信息，密谋
+# 行动难度：8
+# 需要渗透等级：40
+# 花费：100淫罪技艺
+# 行动维护费：2淫罪技艺
+# 通过我们的商业间谍对各级会计与审计的肉体贿赂，使敌对企业在境外设立的分部财务报表出现严重负债的假象，迫使其分拆境外业务。
+operation_divest_redundant_assets = {
+	target = none
+	categories = {
+		op_cat_subterfuge # 密谋
+		op_cat_economy # 经济
+	}
+	picture = GFX_evt_syndicate_operation_201
+	desc = operation_divest_redundant_assets_desc
+
+	stages = 4 # 阶段数
+	spy_power_cost = 40 # 渗透等级
+
+	resources = {
+		category = operations
+		cost = {
+			corruption_business_point = 100
+		}
+		upkeep = {
+			corruption_business_point = 1
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_valid_civic = civic_corruption_syndicate 
+			has_technology = tech_building_unlock_II
+		}
+		target = { 
+			has_authority = auth_corporate 
+			is_cg_empire = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+	}
+	stage = { 
+		difficulty = 8
+		icon = GFX_espionage_chapter_icon_document
+		event = corruption_syndicate_operation.201
+	}
+	stage = { 
+		difficulty = 8
+		icon = GFX_espionage_chapter_icon_surveillance
+		event = corruption_syndicate_operation.202
+	}
+	stage = { 
+		difficulty = 8
+		icon = GFX_espionage_chapter_icon_security
+		event = corruption_syndicate_operation.203
+	}
+	stage = { 
+		difficulty = 8
+		icon = GFX_espionage_chapter_icon_success
+		event = corruption_syndicate_operation.204
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = {
+			RANDOM_EVENTS = operation_random_events_low_stakes
+		}
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+# 煽动国有化改组（仅对企业政体国家可用）
+# 如果成功：将目标国家的政体改为寡头政体，移除原有的国策，增加商人工会、影子内阁、寻乐者国策
+# 类别：密谋，经济
+# 行动难度：10
+# 需要渗透等级：60
+# 花费：200淫罪技艺
+# 行动维护费：4淫罪技艺
+# 一山不能容二虎，既然没有任何物种的商业才能可以与魅魔相媲美，那将魅魔无与伦比的商业服务提供到每一个外星国家，
+# 即为我等之昭昭天命。低效且无能的公司必须立即进行破产清算，让他们的员工投入自由市场的怀抱中——无论他们的管理层愿不愿意。
+operation_instigate_nationalized_restructuring = {
+	target = none
+	categories = {
+		op_cat_subterfuge # 密谋
+		op_cat_government # 政府
+	}
+	picture = GFX_evt_syndicate_operation_301
+	desc = operation_instigate_nationalized_restructuring_desc
+
+	stages = 4 # 阶段数
+	spy_power_cost = 80 # 渗透等级
+
+	resources = {
+		category = operations
+		cost = {
+			corruption_business_point = 200
+		}
+		upkeep = {
+			corruption_business_point = 2
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_valid_civic = civic_corruption_syndicate 
+			has_technology = tech_building_unlock_III
+		}
+		target = { 
+			has_authority = auth_corporate 
+			is_cg_empire = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+	}
+	stage = { 
+		difficulty = 10
+		icon = GFX_espionage_chapter_icon_document
+		event = corruption_syndicate_operation.301
+	}
+	stage = { 
+		difficulty = 10
+		icon = GFX_espionage_chapter_icon_surveillance
+		event = corruption_syndicate_operation.302
+	}
+	stage = { 
+		difficulty = 10
+		icon = GFX_espionage_chapter_icon_security
+		event = corruption_syndicate_operation.303
+	}
+	stage = { 
+		difficulty = 10
+		icon = GFX_espionage_chapter_icon_success
+		event = corruption_syndicate_operation.304
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = {
+			RANDOM_EVENTS = operation_random_events_low_stakes
+		}
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+# 针对普政国家（非格式塔即可）的间谍行动##########################################
+
+# 将国家思潮往和平主义转移
+# 类别：密谋，政府
+# 行动难度：8
+# 需要渗透等级：40
+# 花费：100淫罪技艺
+# 行动维护费：2淫罪技艺
+operation_country_pacifist_transform = {
+	target = none
+	categories = {
+		op_cat_subterfuge # 密谋
+		op_cat_government # 政府
+	}
+	picture = GFX_evt_syndicate_operation_401
+	desc = operation_country_pacifist_transform_desc
+
+	stages = 2 # 阶段数
+	spy_power_cost = 40 # 渗透等级
+
+	resources = {
+		category = operations
+		cost = {
+			corruption_business_point = 100
+		}
+		upkeep = {
+			corruption_business_point = 1
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_valid_civic = civic_corruption_syndicate 
+			has_technology = tech_building_unlock_II
+		}
+		target = {
+			NOR = {
+				has_authority = auth_corporate # 非巨企
+				has_ethic = ethic_gestalt_consciousness # 非格式塔
+			}
+			is_cg_empire = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+	}
+	stage = { 
+		difficulty = 8
+		icon = GFX_espionage_chapter_icon_document
+		event = corruption_syndicate_operation.401
+	}
+	stage = {
+		difficulty = 8
+		icon = GFX_espionage_chapter_icon_success
+		event = corruption_syndicate_operation.402
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = {
+			RANDOM_EVENTS = operation_random_events_low_stakes
+		}
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+# 将国家思潮往亲外主义转移
+# 类别：密谋，政府
+# 行动难度：8
+# 需要渗透等级：40
+# 花费：100淫罪技艺
+# 行动维护费：2淫罪技艺
+operation_country_xenophile_transform = {
+	target = none
+	categories = {
+		op_cat_subterfuge # 密谋
+		op_cat_government # 政府
+	}
+	picture = GFX_evt_syndicate_operation_401
+	desc = operation_country_xenophile_transform_desc
+
+	stages = 2 # 阶段数
+	spy_power_cost = 40 # 渗透等级
+
+	resources = {
+		category = operations
+		cost = {
+			corruption_business_point = 100
+		}
+		upkeep = {
+			corruption_business_point = 1
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_valid_civic = civic_corruption_syndicate 
+			has_technology = tech_building_unlock_II
+		}
+		target = {
+			NOR = {
+				has_authority = auth_corporate # 非巨企
+				has_ethic = ethic_gestalt_consciousness # 非格式塔
+			}
+			is_cg_empire = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+	}
+	stage = { 
+		difficulty = 8
+		icon = GFX_espionage_chapter_icon_document
+		event = corruption_syndicate_operation.501
+	}
+	stage = {
+		difficulty = 8
+		icon = GFX_espionage_chapter_icon_success
+		event = corruption_syndicate_operation.502
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = {
+			RANDOM_EVENTS = operation_random_events_low_stakes
+		}
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+# 建立循环卖淫产业链
+# 类别：政府，经济
+# 难度6，需要渗透等级30
+
+# 帝国修正：淫罪企业分部内循环
+# 该国内的各淫罪企业分部及其下属部门已建立了循环卖淫产业链，资本流动速率成倍增加。
+# 企业建筑产出+100%
+# 犯罪阶级产出+100%
+operation_establish_circular_prostitution_chain = {
+	target = none
+	categories = {
+		op_cat_subterfuge # 密谋
+		op_cat_economy # 经济
+	}
+	picture = GFX_evt_syndicate_operation_601
+	desc = operation_establish_circular_prostitution_chain_desc
+
+	stages = 2 # 阶段数
+	spy_power_cost = 30 # 渗透等级
+
+	resources = {
+		category = operations
+		cost = {
+			corruption_business_point = 100
+		}
+		upkeep = {
+			corruption_business_point = 1
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_valid_civic = civic_corruption_syndicate 
+			has_technology = tech_building_unlock_III
+		}
+		target = {
+			NOR = {
+				has_authority = auth_corporate # 非巨企
+				has_ethic = ethic_gestalt_consciousness # 非格式塔
+			}
+			is_cg_empire = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+		target = {
+			not = { has_modifier = internal_company_cycle }
+			has_overlord = root.owner
+		}
+	}
+	stage = { 
+		difficulty = 6
+		icon = GFX_espionage_chapter_icon_document
+		event = corruption_syndicate_operation.601
+	}
+	stage = {
+		difficulty = 6
+		icon = GFX_espionage_chapter_icon_success
+		event = corruption_syndicate_operation.602
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = {
+			RANDOM_EVENTS = operation_random_events_low_stakes
+		}
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+# 摧毁军用舰队
+# 类别：破坏，军事
+# 行动难度：12
+# 需要渗透等级：75
+# 花费：250淫罪技艺
+# 行动维护费：8淫罪技艺
+operation_battleship_destroy = {
+	target = none
+	categories = {
+		op_cat_sabotage # 破坏
+		op_cat_military # 军事
+	}
+	picture = GFX_evt_syndicate_operation_701
+	desc = operation_battleship_destroy_desc
+
+	stages = 4 # 阶段数
+	spy_power_cost = 80 # 渗透等级
+
+	resources = {
+		category = operations
+		cost = {
+			corruption_business_point = 200
+		}
+		upkeep = {
+			corruption_business_point = 2
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_valid_civic = civic_corruption_syndicate 
+			has_technology = tech_building_unlock_III
+		}
+		target = {
+			NOR = {
+				has_authority = auth_corporate # 非巨企
+				has_ethic = ethic_gestalt_consciousness # 非格式塔
+			}
+			is_cg_empire = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+	}
+	stage = { 
+		difficulty = 15
+		icon = GFX_espionage_chapter_icon_document
+		event = corruption_syndicate_operation.701
+	}
+	stage = { 
+		difficulty = 15
+		icon = GFX_espionage_chapter_icon_surveillance
+		event = corruption_syndicate_operation.702
+	}
+	stage = { 
+		difficulty = 15
+		icon = GFX_espionage_chapter_icon_security
+		event = corruption_syndicate_operation.703
+	}
+	stage = { 
+		difficulty = 15
+		icon = GFX_espionage_chapter_icon_success
+		event = corruption_syndicate_operation.704
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = {
+			RANDOM_EVENTS = operation_random_events_low_stakes
+		}
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+# 摧毁空间站
+# 类别：破坏，军事
+# 行动难度：12
+# 需要渗透等级：75
+# 花费：250淫罪技艺
+# 行动维护费：8淫罪技艺
+operation_starbase_destroy = {
+	target = none
+	categories = {
+		op_cat_sabotage # 破坏
+		op_cat_military # 军事
+	}
+	picture = GFX_evt_syndicate_operation_801
+	desc = operation_starbase_destroy_desc
+
+	stages = 4 # 阶段数
+	spy_power_cost = 80 # 渗透等级
+
+	resources = {
+		category = operations
+		cost = {
+			corruption_business_point = 200
+		}
+		upkeep = {
+			corruption_business_point = 2
+		}
+	}
+	
+	potential = {
+		owner = { 
+			has_valid_civic = civic_corruption_syndicate 
+			has_technology = tech_building_unlock_III
+		}
+		target = {
+			NOR = {
+				has_authority = auth_corporate # 非巨企
+				has_ethic = ethic_gestalt_consciousness # 非格式塔
+			}
+		}
+		is_cg_empire = no
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+	}
+	stage = { 
+		difficulty = 15
+		icon = GFX_espionage_chapter_icon_document
+		event = corruption_syndicate_operation.801
+	}
+	stage = { 
+		difficulty = 15
+		icon = GFX_espionage_chapter_icon_surveillance
+		event = corruption_syndicate_operation.802
+	}
+	stage = { 
+		difficulty = 15
+		icon = GFX_espionage_chapter_icon_security
+		event = corruption_syndicate_operation.803
+	}
+	stage = { 
+		difficulty = 15
+		icon = GFX_espionage_chapter_icon_success
+		event = corruption_syndicate_operation.804
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = {
+			RANDOM_EVENTS = operation_random_events_low_stakes
+		}
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}

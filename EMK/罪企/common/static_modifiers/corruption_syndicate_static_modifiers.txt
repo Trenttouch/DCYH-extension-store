@@ -1,0 +1,23 @@
+# 间谍活动
+strategic_contraction = {
+	planet_branch_offices_cost_mult = 5 # 分部花费+500%
+}
+
+precinct_house_delay = {
+	planet_building_precinct_house_build_speed_mult = -1
+}
+
+# 沉迷淫乐的军队： 星球防御部队-3
+lust_addicted_army = {
+	pop_defense_armies_add = -3
+}
+# 帝国修正：淫罪企业分部内循环
+# 该国内的各淫罪企业分部及其下属部门已建立了循环卖淫产业链，资本流动速率成倍增加。
+
+# 企业建筑产出+100%
+# 企业建筑维护费+100%
+# 犯罪阶级产出+100%
+internal_company_cycle = {
+	planet_branch_office_buildings_produces_mult = 1 # 它就这样报错，但确实有用
+	planet_jobs_criminal_produces_mult = 1
+}

@@ -1,0 +1,205 @@
+spriteTypes = {
+	##### 主要事件图片
+	spriteType = {
+		name = "GFX_evt_panel_998"
+		texturefile = "gfx/event_pictures/GFX_evt_panel_998.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_panel_34"
+		texturefile = "gfx/event_pictures/GFX_evt_panel_34.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	##### 间谍行动事件图片
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_101"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_101.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_103"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_103.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_201"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_201.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_301"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_301.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_303"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_303.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_304"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_304.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_401"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_401.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_601"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_601.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_602"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_602.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_701"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_701.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_703"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_703.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_801"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_801.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_syndicate_operation_803"
+		texturefile = "gfx/event_pictures/GFX_evt_syndicate_operation_803.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	##### 建筑事件图片（一级）
+	spriteType = {
+		name = "GFX_evt_office_building_101"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_101.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_office_building_102"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_102.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_office_building_103"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_103.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_evt_office_building_104"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_104.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_evt_office_building_105"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_105.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_office_building_106"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_106.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	##### （二级）
+	spriteType = {
+		name = "GFX_evt_office_building_201"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_201.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_office_building_202"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_202.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_office_building_203"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_203.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_evt_office_building_204"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_204.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_evt_office_building_205"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_205.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_office_building_206"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_206.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	##### （三级）
+	spriteType = {
+		name = "GFX_evt_office_building_301"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_301.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_office_building_302"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_302.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_office_building_303"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_303.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_evt_office_building_304"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_304.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_evt_office_building_305"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_305.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_office_building_306"
+		texturefile = "gfx/event_pictures/GFX_evt_office_building_306.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+}

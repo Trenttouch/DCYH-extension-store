@@ -1,0 +1,46 @@
+civic_corruption_syndicate = {
+	icon = "gfx/interface/icons/governments/civics/civic_corruption_syndicate.dds"
+	modification = no
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		species_class = {
+			value = Magical_Bitch
+		}
+	}
+	possible = {
+		authority = {
+			value = auth_brothel
+		}
+		civics = {
+			NOR = { 
+				value = civic_master #做爱欲盛宴的冲突
+				value = civic_all_slave #做全民性奴的冲突
+			}
+		}
+		ethics = { # 不是极端排外
+			NOR = {
+				value = ethic_fanatic_egalitarian
+				value = ethic_fanatic_xenophobe
+			}
+		}
+	}
+	
+	traits = {
+		trait = trait_DC_ethic_carnalism
+	}
+
+	modifier = {		
+		empire_size_colonies_mult = 1 # 来自殖民地的帝国规模+100%
+		empire_size_penalty_mult = 0.25 # 帝国规模效果+25%
+		planet_branch_offices_cost_mult = -0.5 # 分部设立花费-50%
+		empire_size_branch_office_mult = -0.75 # 来自分部的帝国规模-75%
+		spy_network_daily_value_mult = 0.5 # 渗透速度+50%
+		intel_decryption_add = 5 # 破译+5
+	}
+
+	random_weight = {
+		modifier = { factor = 50 }
+	}
+}

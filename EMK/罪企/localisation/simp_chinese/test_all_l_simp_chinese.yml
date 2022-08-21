@@ -1,0 +1,475 @@
+﻿l_simp_chinese:
+# #####################################################国策#####################################################
+civic_corruption_syndicate:0 "魅罪淫企"
+civic_corruption_syndicate_desc:0 "无垠星海，并非皆始为敌手，为了种族的未来与发展，我们可以放低姿态，以更为友好的方传播性爱的美好与高尚，那么，商业便是抱有如此想法魅魔们选择的另一片没有硝烟的战场。\n§G特殊国策：§!\n不能签署§Y商业协议§!\n可以在任何未与自己处于战争中或停战中的帝国的星球上建立§Y分部§!\n§Y分部§!行星上的犯罪度会提高分部的价值\n除了普通的 £building£ §Y$BRANCH_OFFICE_BUILDINGS$§!，通过完成特殊科技将解锁更多特色 £building£ §M$BRANCH_OFFICE_BUILDINGS$§!以及§M间谍行动§!\n建成$building_corp_manage_center$后，可在通讯界面与办公室进行交互\n可使用§G法令§!强化商业谍报部门"
+
+gov_corruption_syndicate:0 "§Y魅罪淫企§!"
+gov_corruption_syndicate_desc:0 "§Y以性服务企业为核心控股公司的康采恩，其内部子公司的业务涵盖了管理国家方方面面。§!"
+# #####################################################命名#####################################################
+
+# #####################################################修正#####################################################
+strategic_contraction:0 "战略紧缩"
+lust_addicted_army:0 "沉迷淫乐的军队"
+lust_addicted_army_desc:0 "星球上的军人变得品行下流，纪律涣散，成天往来与军妓场所，与外来企业的魅魔们缠绵不离。"
+internal_company_cycle:0 "淫罪企业分部内循环"
+internal_company_cycle_desc:0 "该国内的各淫罪企业分部及其下属部门已建立了循环卖淫产业链，资本流动速率成倍增加。"
+
+# #####################################################决议#####################################################
+
+# #####################################################特殊项目#################################################
+
+# #####################################################科技#####################################################
+tech_building_unlock_I:0 "基础性服务项目"
+tech_building_unlock_II:0 "阿尔法素辅助魅惑"
+tech_building_unlock_III:0 "精神控制扩张理论"
+
+tech_building_unlock_I_desc:0 "基于淫魅罪企在母星的经营经验开设的对外性服务项目，主要着眼于如何在避免受过度关注的前提下，尽可能渗透分部所在殖民地的市场。"
+tech_building_unlock_II_desc:0 "在结合了对阿尔法素的研究成果与异星分部市场运营经验后，我们可以推出根据实际情况因地制宜的新异星性服务项目。"
+tech_building_unlock_III_desc:0 "有了长年的异星性服务运营实践经验为基础、在精神控制技术色情扩张协议理论的共同支持下，我们终于完全掌握了异星性服务行业的精义。今后，通过性爱将国家玩弄于股掌之中将不再是天方夜谭。"
+
+tech_building_unlock_I_modi:0 "解锁新的特殊§Y企业建筑§!\n解锁基础§M分部星球行动§!"
+tech_building_unlock_II_modi:0 "解锁特殊§Y企业建筑§!的进一步升级\n解锁针对国家开展的特殊§M间谍活动§!\n解锁更多§M分部星球行动§!"
+tech_building_unlock_III_modi:0 "解锁特殊§Y企业建筑§!的最高级升级\n解锁更多针对国家开展的特殊§M间谍活动§!\n解锁更多§M分部星球行动§!"
+# #####################################################建筑#####################################################
+building_corp_manage_center:0 "§M堕落企业办公室§!"
+building_corp_manage_center_desc:0 "建立在首都的高耸大楼，作为了利用企业操控他国的中心港，创造着令异星人沦陷的建筑和岗位，拨算着从他乡人榨取的金币和精液。"
+#
+##
+#
+building_kinky_salon_lv1:0 "§M公共关系部§!"
+building_kinky_salon_lv1_desc:0 "一间只为与我们达成过内幕交易的高层人员提供服务的会员制酒店，援交官员们为他们提供最顶级的一对一客制化服务，以保证他们绝对忠诚于我们之间的“小秘密”。"
+
+building_kinky_salon_lv2:0 "§M要员性服务§!"
+building_kinky_salon_lv2_desc:0"灯光昏暗而温暖的酒店大楼，内部时不时举办香艳放浪的半公开酒会，援交官员与她们负责的服务对象在柔软的沙发上翻云覆雨，而选秀台上、美人们轮番上阵，搔首弄姿，渴望得到新顾客的青睐，让某位大人物的下体和灵魂成为她们的专属掌中玩物。"
+
+building_kinky_salon_lv3:0 "§M奢淫沙龙§!"
+building_kinky_salon_lv3_desc:0 "灯红酒绿的大型娱乐城，为当地上流阶层提供极尽奢淫的服务。酒店的贵宾厅实质上已经代替了政府机关大楼，大人物们不分昼夜地与娇柔媚骨的援交官员执行“公务”。援交官员们吹的耳边风，很快就会被落实为政令或法条。"
+#
+##
+#
+building_succubus_nightclub_lv1:0 "§M魅魔按摩店§!"
+building_succubus_nightclub_lv1_desc:0"魅魔在贫民街区新开辟的聚居区内，开张着灯光昏暗的按摩店，暗中进行卖淫服务。魅魔日常生活排出的液体被统一收集起来，供应生产淫药的原材料。"
+
+building_succubus_nightclub_lv2:0"§M魅魔娼馆§!"
+building_succubus_nightclub_lv2_desc:0"聚居区内原本私下开张按摩店，改建成了招牌大展、霓虹闪烁的娼馆，里面的魅魔为当地市民提供花样繁多，应有尽有的性爱服务，每月结算的人气排行榜中名列前茅的小姐，将荣获调回本部接受专业性奴调教的资格。"
+
+building_succubus_nightclub_lv3:0"§M魅魔夜总会§!"
+building_succubus_nightclub_lv3_desc:0"夜晚，魅魔聚居区内一片灯红酒绿，热闹非凡，吸引着大量的嫖客前来游乐，仪态煽情、衣着暴露的小姐在街道上公开拉客，露天表演香艳歌舞，心急的嫖客直接和魅魔们在街巷墙角边开战，整片街区一派淫靡景象。为了开拓娇艳绝色的星际视野，这里被指定为国内绝色学院的修学旅行目的地，每年资历尚浅绝色美人们迈着娇羞含蓄的步伐走进街区时，都能引发期待已久的嫖客们久经不息的阵阵欢呼。"
+#
+##
+#
+building_industrial_integration_lv1:0"§M平价红灯区§!"
+building_industrial_integration_lv1_desc:0"在机械轰鸣的厂区，在脏乱嘈杂的乡镇，一间间预制板组成的简易炮房拔地而起。低消费、多渠道支付、积分制与传销式宣传开辟了这片广阔的市场。热情洋溢的魅魔实习生，为当地居民麻木空洞的日常生活添加了一抹艳丽色彩。"
+
+building_industrial_integration_lv2:0"§M制造业兼并§!"
+building_industrial_integration_lv2_desc:0"在魅魔的肉体攻势下，各大工业企业很快同意了我们的入股，应召女郎开始引入基于性服务的员工福利体系，极大鼓励了异星员工的生产积极性。"
+
+building_industrial_integration_lv3:0"§M全球工业整合§!"
+building_industrial_integration_lv3_desc:0"当地的产业链已经被我们完全掌控，源源不断地向母公司输出廉价原料和产品。异星员工们不分昼夜地加班工作，只为了能和美艳动人的应召女郎共度良宵。大部分异星员工还没来得及退休，就被各种意义上榨干了身体，但即使如此，应聘者还是络绎不绝。"
+#
+##
+#
+building_aphrodisiac_lab_lv1:0"§M淫药实验室§!"
+building_aphrodisiac_lab_lv1_desc:0"用欲望宝石作为原材料，针对当地物种生理特征进行改良的淫药实验，这项研究对我们在当地开展商业活动具有重大意义。"
+
+building_aphrodisiac_lab_lv2:0"§M肉体改造研究所§!"
+building_aphrodisiac_lab_lv2_desc:0"引入淫荡性奴作为研究范本的异种肉体改造研究，深度解剖当地物种的生理结构，让我们更深入了解如何对当地物种进行肉体侍奉和精神控制，甚至改造为下等便器。"
+
+building_aphrodisiac_lab_lv3:0"§M魅魔学院§!"
+building_aphrodisiac_lab_lv3_desc:0"在魅魔色情博士与魅魔派学术组织对当地学术界的联合渗透下，最终形成了彻底垄断教育界的学阀。由我们国家出资出资赞助的联合学院成为了当地唯一能培养出尖端科研人才的学府，校方将为学生安排清纯可爱魅魔学伴，确保其才智为我们所用。"
+#
+##
+#
+building_lust_preach_lv1:0"§M地下阿姆洛兹教会§!"
+building_lust_preach_lv1_desc:0"一座不起眼的建筑隐秘的地下，有一间被带有一个圆洞的隔板隔开的房间。任何雄性都可以将自己的肉棒伸入圆洞，将圣液供奉给天神的选民，短暂地造访天国。"
+
+building_lust_preach_lv2:0"§M淫欲大教堂§!"
+building_lust_preach_lv2_desc:0"淫欲大教堂的结构由专门从魅魔的母星运来，具有神圣意义的粉色砖石材料制成。内部铺设厚重的地毯，摆放着柔软的沙发，阳光透过深粉色的玻璃射入大礼堂，营造出昏暗朦胧的气氛。魅魔修女与信众们依贴而坐，倾听他们的忏悔，抚慰他们的焦躁。到了举行礼拜的时日，修女们甘美的娇喘与皮肉的拍响在精心设计的礼堂中回荡，神圣而悠长。"
+
+building_lust_preach_lv3:0"§M教会地产§!"
+building_lust_preach_lv3_desc:0"由阿姆洛兹教会支配的农业区划，设有多所公益服务设施以及经营设施。魅魔修女在育儿福利院照看她们生下的孩子以及被弃养的孤儿，并用肉体教导他们学习天神的圣谕。济贫收容所为贫苦的信众提供住所和工作，只每日收取信众的圣液作为供奉。绝色修道院完全按照绝色学院标准培训魅魔修女，并让她们参与圣事，亲身领受天神的赐福。"
+#
+##
+#
+building_prostitution_harbour_lv1:0"§M雇佣兵安全屋§!"
+building_prostitution_harbour_lv1_desc:0"隐藏于淫罪分部服务上流阶层的酒店地下的安全屋，具备堡垒级防护能力的同时还有奢华的生活条件，一线员工值岗以外的时间几乎都和自己专属魅魔军妓如胶似漆地黏在一起。"
+
+building_prostitution_harbour_lv2:0"§M武装民船补给港§!"
+building_prostitution_harbour_lv2_desc:0"我们企业旗下的物流行业完全遵循自由劳动原则，只要武装民船的船长能即使准确地送达货物，就能获得全额报酬。船长在运输途中也可以经营副业，其利润将被抽取一小笔保险金，以应对船只损毁的风险。由企业委派的魅魔大副兼驻舰军妓负责审计船长的副业所得、监督船长防止叛逃、并为船员们排解深空航行中积累的性欲。"
+
+building_prostitution_harbour_lv3:0"§M私人防务承包商§!"
+building_prostitution_harbour_lv3_desc:0"集星球地面防御、贸易线路保护、锚地运营与舰队维护于一体的综合性防务承包企业。异星士兵与船员的下体受到魅魔军妓的直接关怀与控制，确保战斗人员具备的高昂的战斗精神与毫不动摇的忠诚性。"
+# #####################################################职业#####################################################
+job_sultry_secretary:0 "猎艳秘书"
+job_sultry_secretary_plural:0 "猎艳秘书"
+job_sultry_secretary_desc:0 "衣着暴露的秘书们除了替沉迷性爱的领导者管理星区间的各项事务，同时也会亲自前往各种淫靡场所一边做爱放松自己，一边挑选适合前往分布星球帮助国家拓展业务的优秀魅魔。"
+mod_job_sultry_secretary_add:0 "£job_sultry_secretary£$job_sultry_secretary_plural$"
+mod_job_sultry_secretary_per_pop:0 "每$VALUE$个人口提供§G+1§!个$job_sultry_secretary$岗位"
+mod_job_sultry_secretary_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§! £mod_job_sultry_secretary_add£"
+
+job_corrupted_enforcer:0 "§R腐败执法者§!"
+job_corrupted_enforcer_plural:0 "§R腐败执法者§!"
+job_corrupted_enforcer_desc:0 "已经疯狂地迷恋上魅魔肉体的执法者，为了博取情人的欢心，肆意践踏法律，毫无职业道德，掩盖甚至协助魅魔的罪恶行径。"
+mod_job_corrupted_enforcer_add:0 "£job_corrupted_enforcer£$job_corrupted_enforcer_plural$"
+mod_job_corrupted_enforcer_per_pop:0 "每$VALUE$个人口提供§G+1§!个$job_corrupted_enforcer$岗位"
+mod_job_corrupted_enforcer_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§! £mod_job_corrupted_enforcer_add£"
+
+job_corrupted_politician:0 "§R腐败官僚§!"
+job_corrupted_politician_plural:0 "§R腐败官僚§!"
+job_corrupted_politician_desc:0 "沉溺于魅魔肉体的官僚，为了获得魅魔的特别服务，不惜寻租权力、变卖国有资产，为协助扩张企业的资本注入无所不用其极。"
+mod_job_corrupted_politician_add:0 "£job_corrupted_politician£$job_corrupted_politician_plural$"
+mod_job_corrupted_politician_per_pop:0 "每$VALUE$个人口提供§G+1§!个$job_corrupted_politician$岗位"
+mod_job_corrupted_politician_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§! £mod_job_corrupted_politician_add£"
+
+job_whoremaster:0 "§R嫖客§!"
+job_whoremaster_plural:0 "§R嫖客§!"
+job_whoremaster_desc:0 "来自形形色色的物种、阶级、行业的嫖客，他们之间唯一的共同点是沉溺于魅魔的性服务。"
+mod_job_whoremaster_add:0 "£job_whoremaster£$job_whoremaster_plural$"
+mod_job_whoremaster_per_pop:0 "每$VALUE$个人口提供§G+1§!个$job_whoremaster$岗位"
+mod_job_whoremaster_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§! £mod_job_whoremaster_add£"
+
+job_erotic_genius:0 "§R情色天才§!"
+job_erotic_genius_plural:0 "§R情色天才§!"
+job_erotic_genius_desc:0 "以魅魔情人的美色作为消费品，展开毫无底线的研究，不断地扩张魅魔派学阀在学术界的影响力。"
+mod_job_erotic_genius_add:0 "£job_erotic_genius£$job_erotic_genius_plural$"
+mod_job_erotic_genius_per_pop:0 "每$VALUE$个人口提供§G+1§!个$job_erotic_genius$岗位"
+mod_job_erotic_genius_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§! £mod_job_erotic_genius_add£"
+
+job_lust_preacher:0 "§R色欲传道者§!"
+job_lust_preacher_plural:0 "§R色欲传道者§!"
+job_lust_preacher_desc:0 "阿姆洛兹教会的义工，向当地人民传播阿姆洛兹的福音，并散发印有魅魔修女照片的宣传小册子。"
+mod_job_lust_preacher_add:0 "£job_lust_preacher£$job_lust_preacher_plural$"
+mod_job_lust_preacher_per_pop:0 "每$VALUE$个人口提供§G+1§!个$job_lust_preacher$岗位"
+mod_job_lust_preacher_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§! £mod_job_lust_preacher_add£"
+
+job_pornographic_mercenary:0 "§R肉欲雇佣兵§!"
+job_pornographic_mercenary_plural:0 "§R肉欲雇佣兵§!"
+job_pornographic_mercenary_desc:0 "这些雇佣兵收取的报酬不是金钱，而是魅魔的肉体，因此极难被其他势力收买。他们在武装保卫企业私有财产方面的工作中作出了突出贡献。"
+mod_job_pornographic_mercenary_add:0 "£job_pornographic_mercenary£$job_pornographic_mercenary_plural$"
+mod_job_pornographic_mercenary_per_pop:0 "每$VALUE$个人口提供§G+1§!个$job_pornographic_mercenary$岗位"
+mod_job_pornographic_mercenary_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§! £mod_job_pornographic_mercenary_add£"
+# #####################################################资源#####################################################
+corruption_business_point:0 "淫罪技艺"
+corruption_business_point_desc:0 "这些从各个分部收集而来的营业经验有助于我们经营整个企业的方方面面，为创造完全堕落于性欲的银河打下坚实的基础。"
+# ###################################################面板事件###################################################
+corruption_syndicate_panel.998.name:0 "市场部门的躁动"
+corruption_syndicate_panel.998.desc:0 "与外星国家的首次接触令我们的市场部门兴奋不已，她们发觉利用市场对目标国家的渗透，能够实现不少对我们发展有利的行动，随后便迫不及待地向[Root.GetRulerName]提出申请，准备在首都建造一座新的建筑来管理对外市场的各项事务。"
+corruption_syndicate_panel.998.a:0 "我们会给他们开出一个没法拒绝的条件。"
+corruption_syndicate_panel.998.a.tooltip:0 "解锁首都建筑：§M堕落企业办公室§!"
+
+corruption_syndicate_panel.999.desc:0 "日安，Boss，我是市场部门所选拔的首任秘书，往后一段日子里我将协助您处理星系间的企业事务，希望我能够为您分摊些许压力。\n现在请容许我回到工作岗位了，部门刚刚建立，诸多事情都没有处理，如果有需要就在国家通讯界面联系我吧。"
+corruption_syndicate_panel.999.a:0 "那……性欲处理呢？"
+corruption_syndicate_panel.999.a.response:0 "哈？开什么玩笑，我才不和那群成天精液满脑的同胞一样为了渴求肉棒饥不择食，我对他们有自己的追求，而为了获得他们自然就是，§Y赚钱，赚更多更多的钱来买下最好的肉棒。§!知道为什么我当上这份职位的吗？我可是唯一一个从面试项目的触手池子里爬出来的人，就足以证明我对金钱的欲望大过性欲了。\n好了，闲话少说，快去工作！那么多的钱等着我们去赚，不能让他们流进了别人的口袋！"
+
+corruption_syndicate_panel.2.name:0 "堕落企业办公室"
+corruption_syndicate_panel.2a.desc:0 "Boss，如果您闲着没事就去§E科技开发部§!转转，看看我们那些科学家是把脑子泡在精液里还是在给我们的企业好好工作！有更好的服务当然才能赚更多的钱！"
+corruption_syndicate_panel.2b.desc:0 "请不要用那种发情的表情盯着我，Boss，无论您说多少次都不行的。除非我的确想用钱把你买下来。"
+corruption_syndicate_panel.2c.desc:0 "请不要总是和我闲聊了，我们都很忙不是吗，Boss？"
+corruption_syndicate_panel.2d.desc:0 "如果分部开设太多了……我们的收入会不会反而降低啊……真是奇怪……"
+corruption_syndicate_panel.2e.desc:0 "但愿我们有足够的情报来保证企业的运营。是的，Boss，有空就派大使们去建立间谍网！她们的工资也不能白拿！"
+corruption_syndicate_panel.2f.desc:0 "那些在外工作的同胞们究竟怎么样了呢？……你认为我在关心她们？想多了，我只想知道我选她们去工作是不是能好好的赚够钱！"
+corruption_syndicate_panel.2g.desc:0 "唉……或许有时候我也得为了自己去触手花园里放松放松什么的……对，我宁愿和触手过也不会随随便便选人来和我做爱！"
+corruption_syndicate_panel.2h.desc:0 "误工费和角色扮演费是要另收的，如果您不想还半辈子的嫖贷，就赶快把手从我屁股上拿开。"
+corruption_syndicate_panel.2i.desc:0 "唉……真想成为一个触手苗床，每天一睁眼就被触手轮奸，泡在精液里什么都不用想……但就算干到下辈子可能都攒不够买一池触手的钱……"
+corruption_syndicate_panel.2j.desc:0 "过去做实习的时候，我用嘴清理过那些干体力活的工人不知多久没洗过的肉棒，那味道简直一言难尽的恶心……为了不让自己沦落成要接受基因改造对那味道成瘾才能活下去的下等员工，我才爬到今天的位置。"
+corruption_syndicate_panel.2k.desc:0 "对我的大多数同胞来说，财富和地位都远远不及性爱的快感重要，因此只要垄断性服务行业，就能支配她们，这叫先高潮带动后高潮。"
+corruption_syndicate_panel.2l.desc:0 "教会？那些修女多半没法发现金钱的魅力，还在把自己的生存意义依附于阿姆洛兹大人身上。她们喜欢送炮就让她们送，不拉低市价就行。"
+corruption_syndicate_panel.2m.desc:0 "你说那些武装民船船长经营副业的货是哪来的？当然是抢的啊！不会真的有人以为运输船到了低安全星系还受法律保护吧？嗯？"
+corruption_syndicate_panel.2n.desc:0 "在我看来，金钱的力量和阿姆洛兹大人的权能有一定共通之处，因此阿姆洛兹大人是我们公司最大的股东，只不过祂从来不过问我们的经营方针。"
+corruption_syndicate_panel.2o.desc:0 "真是难以理解，有些外星人居然会给丧失生殖能力的老人提供生活保障！它们怎么能忍受这种毫无意义的支出？"
+corruption_syndicate_panel.2p.desc:0 "整个物种共用一个脑子的奇怪国家，整个国家就是一台超级大机器的国家，还有那种见到外星人就要全都杀光光的国家，从它们身上榨不出一滴油水，真是烦死了！为什么宇宙里会有那么多奇形怪状的东西？我宁愿去和另一家企业打商战！"
+corruption_syndicate_panel.2q.desc:0 "那些还要靠武力冲突解决争端的物种真是太可怜了，明明用钱和性欲管理就能解决所有问题。打来打去除了妨碍我们帮它们把生意做大做强，真是没有任何好处。"
+corruption_syndicate_panel.2r.desc:0 "有些外星人宣称人人平等，财产公有，真是不可理喻！没有利润，劳动怎么可能有积极性？有些同胞甚至还受其蛊惑，宣称所有魅魔都有权成为性奴，必须出重拳镇压这种扰乱主奴秩序、鼓吹不劳而获的有害思想。"
+corruption_syndicate_panel.2s.desc:0 "绝色学院那些可爱的小粉穴，在学院里养尊处优惯了，自以为毕业后有公司分配服务上流阶层的岗位就娇气得不行，等那些变态外星人领导玩点重口的，马上就有四分之三人要堕落成母猪。真是可笑啊。"
+corruption_syndicate_panel.2t.desc:0 "想当初，我们的星际公司刚开张，员工拢共才十几人，七八间办公室，全靠我们这些高层高超的床技把友商全部干成脑子里只剩下高潮的肉便器，才成就了我们今天的地位。"
+corruption_syndicate_panel.2u.desc:0 "Boss，让那些没有脑子操控轰炸机的驾驶员给我注意点，可别让她们砸坏了我们的产业！也少杀点我们的潜在用户啊喂！"
+
+corruption_syndicate_panel.2.a:0 "分部事务部"
+corruption_syndicate_panel.2.a.tooltip:0 "前往管理淫罪分部的特殊事务"
+corruption_syndicate_panel.2.b:0 "科技开发部"
+corruption_syndicate_panel.2.b.tooltip:0 "前往进行异星性服务科技与项目的研发"
+corruption_syndicate_panel.2.c:0 "聊天"
+corruption_syndicate_panel.back:0 "返回上一级"
+corruption_syndicate_panel.backtomain:0 "返回主页面"
+corruption_syndicate_panel.exit:0 "结束办公"
+
+corruption_syndicate_panel.3.desc:0 "这里是我们对异星淫罪分部的特殊事务进行统合管理的部门。\n您可以在该界面选择一个分部，并选择您要在§Y该分部所在殖民地§!执行的特殊事务。"
+# boet = branch office event target
+boet_001:0 "§E[boet_001.GetName]§!"
+boet_002:0 "§E[boet_002.GetName]§!"
+boet_003:0 "§E[boet_003.GetName]§!"
+boet_004:0 "§E[boet_004.GetName]§!"
+boet_005:0 "§E[boet_005.GetName]§!"
+boet_006:0 "§E[boet_006.GetName]§!"
+boet_007:0 "§E[boet_007.GetName]§!"
+boet_008:0 "§E[boet_008.GetName]§!"
+boet_009:0 "§E[boet_009.GetName]§!"
+boet_010:0 "§E[boet_010.GetName]§!"
+boet_011:0 "§E[boet_011.GetName]§!"
+boet_012:0 "§E[boet_012.GetName]§!"
+boet_013:0 "§E[boet_013.GetName]§!"
+boet_014:0 "§E[boet_014.GetName]§!"
+boet_015:0 "§E[boet_015.GetName]§!"
+boet_016:0 "§E[boet_016.GetName]§!"
+boet_017:0 "§E[boet_017.GetName]§!"
+boet_018:0 "§E[boet_018.GetName]§!"
+boet_019:0 "§E[boet_019.GetName]§!"
+boet_020:0 "§E[boet_020.GetName]§!"
+boet_021:0 "§E[boet_021.GetName]§!"
+boet_022:0 "§E[boet_022.GetName]§!"
+boet_023:0 "§E[boet_023.GetName]§!"
+boet_024:0 "§E[boet_024.GetName]§!"
+boet_025:0 "§E[boet_025.GetName]§!"
+boet_026:0 "§E[boet_026.GetName]§!"
+boet_027:0 "§E[boet_027.GetName]§!"
+boet_028:0 "§E[boet_028.GetName]§!"
+boet_029:0 "§E[boet_029.GetName]§!"
+boet_030:0 "§E[boet_030.GetName]§!"
+
+corruption_syndicate_panel.31.name:0 "在§E[target_office.GetName]§!展开行动"
+corruption_syndicate_panel.31.desc:0 "针对§E[target_office.GetName]§!，我们现在能够开展不少行动，您想怎么做？"
+corruption_syndicate_panel.31.a:0 "破坏公安系统"
+corruption_syndicate_panel.31.b:0 "破坏司法系统"
+corruption_syndicate_panel.31.c:0 "开放移民申请"
+corruption_syndicate_panel.31.d:0 "为军队提供慰安服务"
+corruption_syndicate_panel.31.e:0 "策划独立叛乱"
+corruption_syndicate_panel.31.e.tooltip:0 "我们将资助§E[target_office.GetName]§!上的罪犯与反叛军，尝试摧毁当地政府取而代之。\n当地每个£job_pornographic_mercenary£$job_pornographic_mercenary_plural$提供§R5§!个单位的$assault_army_plural$；\n每个£job_corrupted_enforcer£$job_corrupted_enforcer_plural$提供§R3§!个单位的$assault_army_plural$；\n每个£job_corrupted_politician£$job_corrupted_politician_plural$提供§R2§!个单位的$assault_army_plural$；\n每个£job_whoremaster£$job_whoremaster_plural$提供§R1§!个单位的$assault_army_plural$。"
+
+corruption_syndicate_panel.32.name:0 "在§E[target_office.GetName]§!的行动开展完成"
+corruption_syndicate_panel.32.desc:0 "很好，我会让那个分部的负责人开展相关的行动，很快就会有所成效的。"
+
+corruption_syndicate_panel.4.desc:0 "这里是我们的技术部门和运营部门进行创意研发的场所，您可以在这里指派他们完成一些特定项目的开发。除此之外，我们还能够利用我们在星际之间的影响力研究淫罪技艺。"
+corruption_syndicate_panel.alreadyunlock:0 "科技已在研究列表中"
+corruption_syndicate_panel.4.a:0 "进行一级科技升级"
+corruption_syndicate_panel.4.b:0 "进行二级科技升级"
+corruption_syndicate_panel.4.c:0 "进行三级科技升级"
+corruption_syndicate_panel.4.d:0 "淫罪技艺钻研（100）"
+corruption_syndicate_panel.4.e:0 "淫罪技艺钻研（200）"
+corruption_syndicate_panel.4.f:0 "淫罪技艺钻研（500）"
+corruption_syndicate_panel.4.g:0 "淫罪技艺钻研（1000）"
+
+corruption_syndicate_panel.5.desc:0 "新的科技已经解锁，请前往科技界面查看。"
+
+# ###################################################建筑事件###################################################
+corruption_syndicate_buildings.101.name:0"$building_kinky_salon_lv1$落成"
+corruption_syndicate_buildings.101.desc:0"经过无数久经情场的援交官员对[boet_temp.GetName]对外商贸部门、监察部门、执法部门等各层级官员的美色诱惑，[Root.GetName]位于[boet_temp.GetName]上的分部终于获得了合法注册公司资质，经营范围为酒店管理、餐饮以及娱乐服务。"
+corruption_syndicate_buildings.101.a:0"立即开始在上流阶层中宣传魅魔的服务。"
+
+corruption_syndicate_buildings.201.name:0"$building_kinky_salon_lv2$扩建完成"
+corruption_syndicate_buildings.201.desc:0"随着[boet_temp.GetName]分部业务的不断扩张，原本严守秘密的特别服务酒店也开始半公开地为会员引荐的官员同僚提供服务。在享受过人间极乐之后，[boet_temp.GetName]政府的高层人员开始一批接一批地成为[Root.GetName]的忠实拥趸。"
+corruption_syndicate_buildings.201.a:0"继续扩大客户群体，排挤统治阶级中的保守老顽固和性无能份子。"
+
+corruption_syndicate_buildings.301.name:0"$building_kinky_salon_lv3$升级完毕"
+corruption_syndicate_buildings.301.desc:0"经过[boet_temp.GetName]分部全体员工的不懈努力，[boet_temp.GetName]政府的所有政要官僚、党派骨干、王公贵族、学阀教授、主教牧首……统统成为了[Root.GetName]的忠实客户，政界内一切不配合我们商业活动的势力都已被扫地出门。从今往后，魅魔在[boet_temp.GetName]上的一切商业服务都将公开透明，畅行无阻。"
+corruption_syndicate_buildings.301.a:0"为尊贵的客户们献上鲜嫩的肉穴，是我们至高的荣幸。"
+##
+##
+corruption_syndicate_buildings.102.name:0"$building_succubus_nightclub_lv1$落成"
+corruption_syndicate_buildings.102.desc:0"与占据城市边缘贫民街区的帮派首领们达成共识后，这片贫民街区成为了大部分尚未办理商务签证，而是通过非法渠道进入[boet_temp.GetName]的[Root.GetName]魅魔员工的藏匿窝点。"
+corruption_syndicate_buildings.102.a:0"魅魔员工们向当地市民展现了[Root.GetName]良好的企业形象。"
+
+corruption_syndicate_buildings.202.name:0"$building_succubus_nightclub_lv2$扩建完成"
+corruption_syndicate_buildings.202.desc:0"经过援交官员在执法部门的协调，[boet_temp.GetName]贫民街区的大部分灰色产业都被纳入了[Root.GetName]的特许经营范畴。原本聚集在这里的失业者、帮派成员、小商贩和乞丐都在魅魔员工们的热情介绍下，获得了一份正经的工作，重新燃起了生活的希望。"
+corruption_syndicate_buildings.202.a:0"作为一家志向高远企业，[Root.GetName]将积极承担社会责任。"
+
+corruption_syndicate_buildings.302.name:0"$building_succubus_nightclub_lv3$升级完毕"
+corruption_syndicate_buildings.302.desc:0"当[boet_temp.GetName]首府外城区改造工程胜利完成后，所有人都会惊叹于[Root.GetName]的创造力——完善的基础设施扩展与缤纷多彩的服务行业，将顾客与消费吸引到了原本被遗弃的城区，同时创造的岗位还极大改善了城市化带来的外来务工人员问题。除了在这里基本见不到老年人以外，一切看起来都是那么美好，如同一个繁荣的梦境。"
+corruption_syndicate_buildings.302.a:0"他们都是自愿在我们的温柔乡中长眠的，千真万确。"
+##
+##
+corruption_syndicate_buildings.103.name:0"$building_industrial_integration_lv1$落成"
+corruption_syndicate_buildings.103.desc:0"作为一家具有长久经营历史的企业，我们深知下沉市场具有不可忽视的力量。低消费与性价比是这里的王道，也是培养[Root.GetName]实习生奋斗精神的最佳场所。在营销初期，当务之急是在[boet_temp.GetName]的劳工群体中培养性服务消费习惯。"
+corruption_syndicate_buildings.103.a:0"“邀请十个新顾客，终身免费享受附赠手交！”"
+
+corruption_syndicate_buildings.203.name:0"$building_industrial_integration_lv2$扩建完成"
+corruption_syndicate_buildings.203.desc:0"经过我们在工矿农区划下沉市场的长期经营，[boet_temp.GetName]上的劳工已经离不开魅魔的服务了。当[Root.GetName]控股的企业发布招聘广告时，应聘者如潮水般涌来，异星员工争先恐后自愿延长工时以换取更高级的“员工福利”。"
+corruption_syndicate_buildings.203.a:0"“十四小时工作，八小时休息，剩下两小时干个爽！”"
+
+corruption_syndicate_buildings.303.name:0"$building_industrial_integration_lv3$升级完毕"
+corruption_syndicate_buildings.303.desc:0"在[Root.GetName]应召女郎的不断努力下，整个[boet_temp.GetName]的采矿业、农业、制造业与运输业企业要么被挤出市场，要么被收购股份纳入[Root.GetName]的掌控。彻底消灭无谓的竞争后，[boet_temp.GetName]的企业创造出了前所未有的巨额利润，用性服务代替加班费的员工福利体系更是将人力成本削减到了极致。"
+corruption_syndicate_buildings.303.a:0"“能够为[Root.GetName]工作，是你们修来的福报啊！”"
+##
+##
+corruption_syndicate_buildings.104.name:0"$building_aphrodisiac_lab_lv1$落成"
+corruption_syndicate_buildings.104.desc:0"在用肉体腐蚀，或者只是单纯用甜言蜜语煽动后，一群被冷遇的[boet_temp.GetName]科学家在魅魔的撺掇下结成了秘密学术组织。他们在[boet_temp.GetName]的学校、机构与企业中互相包庇，排斥异己，并在魅魔的指使下研究如何让魅魔的催情技术更有效地应用在自己的同族身上。"
+corruption_syndicate_buildings.104.a:0"科学不分国界，科学家也不需要祖国。"
+
+corruption_syndicate_buildings.204.name:0"$building_aphrodisiac_lab_lv2$扩建完成"
+corruption_syndicate_buildings.204.desc:0"随着魅魔援交官员们对[boet_temp.GetName]科学伦理委员会的内部腐蚀，魅魔派学术组织在[boet_temp.GetName]进行的研究也变得更加肆无忌惮了起来——不合乎伦理的实验项目被批准，人体实验对象的“招募”方式也越来越突破下限。"
+corruption_syndicate_buildings.204.a:0"相较于科学的迅猛发展，这些代价微不足道。"
+
+corruption_syndicate_buildings.304.name:0"$building_aphrodisiac_lab_lv3$升级完毕"
+corruption_syndicate_buildings.304.desc:0"在[boet_temp.GetName]联合学院建校典礼上，我们的色情博士校长发表了公开讲话，鼓励学生们将自己顶尖的智力用于促进与魅魔之间的友好关系，让科学技术为魅魔服务全宇宙有机生命的宏大目标贡献无可替代的力量。演讲完毕时，听众席边新生与他们的魅魔学伴的啪啪啪声久久不能停息。"
+corruption_syndicate_buildings.304.a:0"科学技术是第一生产力！"
+##
+##
+corruption_syndicate_buildings.105.name:0"$building_lust_preach_lv1$落成"
+corruption_syndicate_buildings.105.desc:0"在[boet_temp.GetName]的贫民区、农业区划等缺乏监管的地区，魅魔修女们开始传播天神阿姆洛兹的福音。心慈好善的魅魔修女们怀着神圣的使命感侍奉圣液满溢，无处释放的肉棒，向迷途的羔羊们宣扬天神的谆谆教诲。"
+corruption_syndicate_buildings.105.a:0"“你们祈求，就必给你们，寻找，就必寻见，叩门，就必为你们开门。”"
+
+corruption_syndicate_buildings.205.name:0"$building_lust_preach_lv2$扩建完成"
+corruption_syndicate_buildings.205.desc:0"经过[Root.GetName]在[boet_temp.GetName]上的商业活动的正规化，阿姆洛兹教会终于获得了合法宗教信仰的地位，魅魔修女也被允许在公众场所抛头露面，展现天神赐予的曼妙身姿公开布道。在信众的热情捐赠下，一座精致优雅的大教堂很快矗立于[boet_temp.GetName]首府的黄金地段，每逢圣日，教堂内都会公开进行乱交礼拜。"
+corruption_syndicate_buildings.205.a:0"“主我们的天神尊大超乎诸神，我所要建的殿也当高大。”"
+
+corruption_syndicate_buildings.305.name:0"$building_lust_preach_lv3$升级完毕"
+corruption_syndicate_buildings.305.desc:0"在天神信徒总督的授意下，[boet_temp.GetName]上的一块区划被奉献给阿姆洛兹教会，以祈求天神长久的赐福。阿姆洛兹教会也没有辜负[boet_temp.GetName]信众的期望，建立起了育儿福利院、济贫收容所、绝色修道院等公益服务设施，并且依托地产收益现金流开展起了贸易物流、福音借贷、贵重品储存服务等经营业务，为[boet_temp.GetName]信众在精神生活、社会公益、经济发展方面都作出了慷慨的回馈。"
+corruption_syndicate_buildings.305.a:0"“万国必称你们为有福的，因你们的地必成为淫乐之地。”"
+##
+##
+corruption_syndicate_buildings.106.name:0"$building_prostitution_harbour_lv1$落成"
+corruption_syndicate_buildings.106.desc:0"由于我们在[boet_temp.GetName]上的商业活动性质，需要一支武装力量在必要时刻保卫[Root.GetName]的私有财产安全。为此我们安排魅魔军妓勾引了一些缺乏感情生活的复员军人和退役特种警察来我们的防务承包子公司就职。"
+corruption_syndicate_buildings.106.a:0"私有财产神圣不可侵犯！"
+
+corruption_syndicate_buildings.206.name:0"$building_prostitution_harbour_lv2$扩建完成"
+corruption_syndicate_buildings.206.desc:0"自从[Root.GetName]获得在[boet_temp.GetName]的物流从业资质后，就租赁了一处空间站锚地作为[Root.GetName]旗下武装民船的补给港。除此之外，防务承包子公司还安排魅魔军妓在锚地上公开招募退役舰艇指挥员，扩大我们的武装民船队伍。"
+corruption_syndicate_buildings.206.a:0"自由贸易的神圣权利需要有一支强大的深空力量来捍卫。"
+
+corruption_syndicate_buildings.306.name:0"$building_prostitution_harbour_lv3$升级完毕"
+corruption_syndicate_buildings.306.desc:0"魅魔军妓们的忠诚服务让[boet_temp.GetName]上的执政者看到了[Root.GetName]提供的防务服务具有巨大价格优势，决定解散当地海军、星球防御部队与民兵组织，将整个[boet_temp.GetName]的防御事务承包给[Root.GetName]旗下的防务承包子公司，以节省财政开支。"
+corruption_syndicate_buildings.306.a:0"削减毫无意义的军费开支，把税款用来促进商贸繁荣才是强国正道。"
+# 选项
+corruption_syndicate.notagain:0 "我已经知晓，不用再提醒我了。"
+
+# #####################################################其他事件###################################################
+##
+## 人口转移
+corruption_syndicate_panel.kidnapped:0 "短时间内无法再次执行"
+# 被转移的星球事件
+corruption_syndicate_panel.34.name:0 "通往无限快感的船票"
+corruption_syndicate_panel.34.desc:0 "近来，§E[Root.GetName]§!上的外国企业开放了一次移民申请，只要是她们旗下服务的忠实客户，无论国家允许与否，都能提出申请，获得企业国民的身份并在她们的首都落户。这对大多数人来说是没有吸引力的，毕竟她们的企业服务给当地带来的更多是淫乱的星球氛围和混乱的当地秩序，俨然是把一颗颗星球当做她们国家妓院的延伸，但依旧有很多民众不顾国家政策和警察的阻拦，哄抢着向报名处投递了一份份申请。今天，在企业的组织下，一艘艘移民飞船停在[Root.GetName]的港口，满载着着我们曾经的国民，在连绵不断的高潮叫声中，飞往了她们的母星。"
+corruption_syndicate_panel.34.a:0 "真是……该死，我们甚至没理由拦截她们。"
+# 人口到达的星球事件（首都）
+corruption_syndicate_panel.35.name:0 "来自异星的移民"
+corruption_syndicate_panel.35.desc:0 "对§E[abduction_planet.GetName]§!开放的移民申请相当成功，不少当地的客户蜂拥着向我们开设的报名处递上自己的申请，他们都在日后的人数统计里获得了和统计员的一次免费性交，并在身上留下了代表移民资格的淫纹。在约定的移民日到来后，他们排着队登上我们的移民船，飞来了我们的母星。"
+corruption_syndicate_panel.35.a:0 "哼哼……我们该拿他们怎么办呢？"
+##
+##反叛事件
+# 独立叛乱对面的通知
+corruption_syndicate_panel.36.name:0 "欲望的獠牙"
+corruption_syndicate_panel.36.desc:0 "自从外企在我们星球建立分部以来，全球民众的心思因为她们建设的各种淫靡设施而混乱不堪，星球犯罪率也是居高不下，为了性爱才选择工作的人们越来越多，如今更是自成派系，簇拥在外企的商业圈周围，像其他民众宣传的行动和抗议政府打压外企产业的呼声也随时间推移越来越多。终于，这群反叛份子终于露出了獠牙，以要求政府允许性爱自由的名义进行了游行，对各大城市展开了夺权行动！"
+corruption_syndicate_panel.36.a:0 "§R该死的！§!"
+# 反抗成功，入侵失败
+# 对面的消息
+corruption_syndicate_panel.37.name:0 "叛乱被镇压"
+corruption_syndicate_panel.37.desc:0 "我们成功镇压了[FROMFROM.GetName]上的罪犯叛乱。我们勇敢的部队士兵们在关键设施重新建立了据点，并恢复了当地的秩序。接下来要做的是监视外企的活动和加强我们的纪律管理，短时间内他们肯定是不敢再反抗我们了。"
+# 己方的消息
+corruption_syndicate_panel.38.name:0 "独立叛乱失败"
+corruption_syndicate_panel.38.desc:0 "根据大使传来的消息，我们资助的[revolted_planet.GetName]叛乱军未能冲破[revolted_planet.GetName]政府军的防御，最终导致了煽动独立叛乱的计划完全失败。"
+corruption_syndicate_panel.38.a:0 "真是可惜，他们为什么就不能接受呢？"
+# 反抗失败，入侵者成功
+# 对面的消息
+corruption_syndicate_panel.39.name:0 "叛乱镇压失败"
+corruption_syndicate_panel.39.desc:0 "或许也是预料之中……企业文化长期的侵蚀让我们的军队毫无纪律可言，哪怕身着精良的装备还是根本无法抵抗齐心的反叛军。最后，我们在[FROMFROM.GetName]上的部队被打败了，我们最后一名忠实的子民也成了反叛军的俘虏，被带进企业设施里进行“逼供”。现在叛军已经宣布独立，他们远在星系中心的同伙也夺下了太空站，将整个星系独立了出来，我们终于还是失去了他们。"
+# 己方的消息
+corruption_syndicate_panel.41.name:0 "独立叛乱成功"
+corruption_syndicate_panel.41.desc:0 "根据大使传来的消息，我们资助的[revolted_planet.GetName]叛乱军于最近推翻了当地的前政府并篡夺了星系空间站的控制权，宣布成立了一个独立与原国家的星际政权，但于此同时，他们也向我们抛出橄榄枝，希望在我们外资企业的领导下实现新国家的经济复苏。"
+corruption_syndicate_panel.41.a:0 "向全星系宣布，[revolted_planet.GetName]人民的自由受我们保护。"
+corruption_syndicate_panel.41.b:0 "让他们自己决定自己的命运吧。"
+
+# #####################################################政策#####################################################
+
+# #####################################################法令#####################################################
+edict_strengthen_commercial_espionage_department:0 "强化商业谍报部门"
+edict_strengthen_commercial_espionage_department_desc:0 "信息是最重要的商业资产。魅魔的物种特性与间谍行动是如此地契合，理应投入更多的的资源培养我们的密谋能力。"
+
+# #####################################################间谍活动#################################################
+operation_facilitate_strategic_contraction:0 "§M促进战略收缩§!"
+operation_facilitate_strategic_contraction_desc:0 "我们的商业间谍被派去色诱市场分析师，让他们向高层传达经济危机可能到来的结论，使执行层内部对扩大投资产生分歧。"
+operation_facilitate_strategic_contraction_on_success:0 "$IF_SUCCESSFUL|E$\n[root.target.GetName]将添加§R分部花费+500%§!的帝国修正，持续10年。"
+
+operation_divest_redundant_assets:0 "§M剥离冗余资产§!"
+operation_divest_redundant_assets_desc:0 "通过我们的商业间谍对各级会计与审计的肉体贿赂，使敌对企业在境外设立的分部财务报表出现严重负债的假象，迫使其分拆境外业务。"
+operation_divest_redundant_assets_on_success:0 "$IF_SUCCESSFUL|E$\n[root.target.GetName]将关闭他们在任何星球开设的分部。"
+
+operation_instigate_nationalized_restructuring:0 "§M煽动国有化改组§!"
+operation_instigate_nationalized_restructuring_desc:0 "两雌不俱立，既然没有任何物种的商业才能可以与魅魔相媲美，那将魅魔无与伦比的商业服务提供到每一个外星国家，即为我等之昭昭天命。低效且无能的公司必须立即进行破产清算，让他们的员工投入自由市场的怀抱中——无论他们的管理层愿不愿意。"
+operation_instigate_nationalized_restructuring_on_success:0 "$IF_SUCCESSFUL|E$\n[root.target.GetName]将会重组为一个寡头政体国家。"
+
+operation_country_pacifist_transform:0 "§M宣传和平主义§!"
+operation_country_pacifist_transform_desc:0 "战争和武力扩张只会导致悲伤、痛苦、以及消费者流失。我们提倡用做爱，而不是战争解决外交博弈。"
+operation_country_pacifist_transform_on_success:0 "$IF_SUCCESSFUL|E$\n使[root.target.GetName]的主流思潮向和平主义转移。"
+
+operation_country_xenophile_transform:0 "§M宣传亲外主义§!"
+operation_country_xenophile_transform_desc:0 "在我们完美的肉体和绝媚的服务态度面前，无论是多么顽固的种族歧视者都会重新审视自己的想法。况且，魅魔的生殖特性也杜绝了基因杂交的风险，任何物种都没有拒绝和魅魔共度春宵一刻的理由。"
+operation_country_xenophile_transform_on_success:0 "$IF_SUCCESSFUL|E$\n使[root.target.GetName]的主流思潮向亲外主义转移。"
+
+operation_establish_circular_prostitution_chain:0 "§M建立循环卖淫产业链§!"
+operation_establish_circular_prostitution_chain_desc:0 "基于目标国家当下的局势，市场分析部门提议加强目标国家内各分部及其下属部门之间的协同关系，形成循环卖淫产业链以提升经营效率。"
+operation_establish_circular_prostitution_chain_on_success:0 "$IF_SUCCESSFUL|E$\n使[root.target.GetName]内的企业建筑资源产出§G+100%§!，同时§R罪犯阶级§!资源产出§R+100%§!。"
+
+operation_battleship_destroy:0 "§M摧毁军用舰队§!"
+operation_battleship_destroy_desc:0 "驻舰娼妓特工将在统一密令下勾引目标国家的军舰指挥官集体叛逃，瓦解目标国家的海军作战能力。"
+operation_battleship_destroy_on_success:0 "$IF_SUCCESSFUL|E$\n摧毁一支由[root.target.GetName]拥有的军用舰队。"
+
+operation_starbase_destroy:0 "§M摧毁空间站§!"
+operation_starbase_destroy_desc:0 "驻扎在目标帝国锚地的性服务员特工将利用身份之便骇入空间站能源管理系统，使目标帝国的所有空间站自爆。"
+operation_starbase_destroy_on_success:0 "$IF_SUCCESSFUL|E$\n摧毁[root.target.GetName]的空间站。"
+
+requires_actor_not_corruption_syndicate:0 "$TRIGGER_FAIL$§R我们有§Y$civic_corruption_syndicate$§!。我们会低调行事。§!"
+# #####################################################间谍事件#################################################
+corruption_syndicate_operation.101.name:0 "身份探寻"
+corruption_syndicate_operation.101.desc:0 "通过查找经常出入我们开办场所的顾客信息，我们找到了一条与[from.GetName]政府中某位市场分析师有关的关系链。我们现在要做的便是给这位分析师送去点“礼物”。"
+corruption_syndicate_operation.102.name:0 "无害献物"
+corruption_syndicate_operation.102.desc:0 "“礼物”几经转手，算是送到了分析师手里，在这位魅魔传间谍回来的简讯里提到这位分析师也逐渐丧失了工作的兴趣，开始沉迷于与她整日不断体验性爱之中。只要他的精神继续变得足够脆弱，我们就能简单的对他进行暗示和引导。"
+corruption_syndicate_operation.103.name:0 "庭上纷乱"
+corruption_syndicate_operation.103.desc:0 "我们的暗示逐渐生效了，这位分析师通过整理实际上是我们安排的真假参半的信息，开始向国家上层传达可能会到来的经济危机这一事情。这样的说法自然在[from.GetName]高层引起了讨论，而本就不团结的政府管理层开始产生了不小的分歧。现在，我们只要等待结果发生……"
+corruption_syndicate_operation.104.name:0 "无奈决定"
+corruption_syndicate_operation.104.desc:0 "不出所料，[from.GetName]的国家首脑为了平定这一分歧采取了保险的方案，减少了对外投资，开设分部的预算。一段时间里我们应该很难看见[from.GetName]来争夺我们说的市场了。"
+##
+##
+corruption_syndicate_operation.201.name:0 "反主为客"
+corruption_syndicate_operation.201.desc:0 "为了完成我们的目的，派出的商业间谍开始出入于[from.GetName]所开设的各种“平凡”的商业设施当中，并尝试与其中一位会计打好关系，并进行“深入”的交流。"
+corruption_syndicate_operation.202.name:0 "快意请求"
+corruption_syndicate_operation.202.desc:0 "进展十分的顺利，凭借着妩媚的举止和专业的言谈，当然也少不了淫欲的催化，魅魔间谍和会计的关系也变得十分紧密，间谍提出的向高级会计们会面的请求也获得了正面的回应，她也将作为其中的一员和他们进行“友好”的讨论。"
+corruption_syndicate_operation.203.name:0 "暗中篡改"
+corruption_syndicate_operation.203.desc:0 "和高级会计们的会面，明面上是友人聚会讨论分部事务，而实际上却是让间谍大展身手的一次混乱淫趴。在把在场所有人榨到昏迷之后，她乘着夜色破解了高管们的电脑，篡改了最新的一次财务报告，让一份亏损的企业财务能够传到国家管理的手里。"
+corruption_syndicate_operation.204.name:0 "拥财狂欢"
+corruption_syndicate_operation.204.desc:0 "意料之中，[from.GetName]的国家首脑看见了这份虚假的财报，虽然质疑其真实性，但还是下令关闭了旗下所有的分部业务来节约开销，虽然很快他们就可能发现问题，但在他们发现之前抢下市场，我们，完全没有错对吧。"
+##
+##
+corruption_syndicate_operation.301.name:0 "散布谣言"
+corruption_syndicate_operation.301.desc:0 "跟顾客打好关系自然是获得回头客的关键，那么利用这种关系散布一些虚假消息自然也是实现计划的一个渠道。我们的服务者在跟顾客接触时有意透露国家将为[from.GetName]员工开放国家企业股权的消息，越来越多的底层群众开始相信这一假消息，开始期待[from.GetName]正式声明的一天。"
+corruption_syndicate_operation.302.name:0 "搭线窃听"
+corruption_syndicate_operation.302.desc:0 "请愿和游行开始时不时在[from.GetName]的[from.Capital.GetName]的官府和街头举行，大批的底层民众渴望通过获得哪怕一丁点股份来获得维持生计的资金，但高层们自然没有开放股份的想法，在各大会议中明确说明了这一诉求的无理性，并希望能对游行进行压制。而他们所说的一切，在被我们的窃听器加工之后匿名进入了[from.GetName]的视频网站中。"
+corruption_syndicate_operation.303.name:0 "反抗突现"
+corruption_syndicate_operation.303.desc:0 "冲突很快就爆发了，甚至不需要我们再次干涉。[from.GetName]民众不同阶级之间的矛盾演化成了暴乱和起义，员工们举着分权平等的旗号冲向政府大楼，将不少政府人员抓获驱逐了出来。受到我们影响的领导者们登入政府，宣称将建立新的领导层。"
+corruption_syndicate_operation.304.name:0 "注定革新"
+corruption_syndicate_operation.304.desc:0 "新的管理层决定将改变国家整体的策略，放弃在外拓张商业业务，转而优先在国内实现富足，许诺实现更多的社会福利并解雇在外的大量员工，变卖国家在外的所有企业资产。现在他们留下的市场空余都将是我们的了。"
+##
+##
+corruption_syndicate_operation.401.name:0 "暗中操纵"
+corruption_syndicate_operation.401.desc:0 "我们通过支持和操控[from.GetName]中一支偏向和平主义的派系，通过宣传和平思想，试图让[from.GetName]接受这个派系的诉求，完成国家思潮的转变。"
+corruption_syndicate_operation.402.name:0 "思潮转换"
+corruption_syndicate_operation.402.desc:0 "成效显著，在我们的暗中操控下，[from.GetName]的政体思潮已经开始向和平主义转移，这势必会对我们的商业拓展取得一定的便利。"
+##
+##
+corruption_syndicate_operation.501.name:0 "暗中操纵"
+corruption_syndicate_operation.501.desc:0 "我们通过支持和操控[from.GetName]中一支偏向亲外主义的派系，通过宣传亲外思想，试图让[from.GetName]接受这个派系的诉求，完成国家思潮的转变。"
+corruption_syndicate_operation.502.name:0 "思潮转换"
+corruption_syndicate_operation.502.desc:0 "成效显著，在我们的暗中操控下，[from.GetName]的政体思潮已经开始向亲外主义转移，这势必会对我们的商业拓展取得一定的便利。"
+##
+##
+corruption_syndicate_operation.601.name:0 "加强内部联系"
+corruption_syndicate_operation.601.desc:0 "我们的部门试图在[from.GetName]开设的一个分部当中建立更高一级的管理机构，提拔一些魅魔专门进行该国家企业事务的管理，并让该国家中不同星球的分部之间建设联络站，以加强管理和运营的效率。"
+corruption_syndicate_operation.602.name:0 "效率提高"
+corruption_syndicate_operation.602.desc:0 "新的下属管理部门在建立[from.GetName]完成，想必我们在该国的商业活动能得到更好的管理，获得的利润也会得到提升。"
+##
+##
+corruption_syndicate_operation.701.name:0 "新品促销"
+corruption_syndicate_operation.701.desc:0 "以限时购买的特别服务为诱饵，我们成功向[from.GetName]推销全新的“驻舰服务”，不少为船员处理性欲的魅魔员工们陆陆续续登上了他们的舰船，准备好了一人面对数十上百名船员强烈性欲的准备。"
+corruption_syndicate_operation.702.name:0 "忠于欲望"
+corruption_syndicate_operation.702.desc:0 "一切的生物都是忠于欲望的，有智慧的生物更是因此，而魅魔们所拥有的这种跨越种族甚至生命形式的魅力让使目标拜倒在自己石榴裙下这件事变得轻而易举。我们的驻舰特工们很快的接近了每只舰船上了指挥官们，让她们的地位从纯粹的飞机杯摇身一变成了高贵的存在。"
+corruption_syndicate_operation.703.name:0 "纸醉金迷"
+corruption_syndicate_operation.703.desc:0 "特工向任务目标表露了身份与目的，不过早已迷醉于温柔乡的目标早已抛却了所谓的职责和荣耀，一心沉醉于魅魔为他们构筑的虚幻泡影中，虽然一开始他们对于任务也只不过是成为傀儡罢了。"
+corruption_syndicate_operation.704.name:0 "群龙无首"
+corruption_syndicate_operation.704.desc:0 "在我们的指引下，[from.GetName]所有舰队的指挥官带着舰队集体脱离了国家的控制，带着船上的士兵悄悄飞离了星系。一切都乱套了，而他们的上级们此时正欲仙欲死地被魅魔们压榨着。混乱已经开始在[from.GetName]蔓延了。"
+##
+##
+corruption_syndicate_operation.801.name:0 "文化入侵"
+corruption_syndicate_operation.801.desc:0 "以文化的入侵的形式在敌方安插我们的特工是种明智的选择，目标对来自我们的业务表示满意，而她们很快就融入了这个充满着荷尔蒙气息的地方。"
+corruption_syndicate_operation.802.name:0 "红颜祸水"
+corruption_syndicate_operation.802.desc:0 "由于这种服务得到了士兵的广泛好评，并且能极大地缓解士兵的精神压力，我们得到了将这种服务在目标帝国范围内推广的机会，但沉迷于性欲可不是什么好事……"
+corruption_syndicate_operation.803.name:0 "奇货可居"
+corruption_syndicate_operation.803.desc:0 "目标逐渐熟悉了性服务这种崭新职业的存在，但因为每座空间站的性服务人员的实际配额不多，空间站角落又多，特工得以在暗处活动并快速拓展关系网以获取情报。"
+corruption_syndicate_operation.804.name:0 "漏洞百出"
+corruption_syndicate_operation.804.desc:0 "通过以“特殊服务”等为由，特工们成功在同一时间让监控失效并用窃取的密钥启动了空间站的自毁程序，在提前就有人做接应的掩护下，所有特工安全撤出，任务圆满完成。"

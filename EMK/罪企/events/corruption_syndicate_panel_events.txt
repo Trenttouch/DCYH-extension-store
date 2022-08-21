@@ -1,0 +1,1026 @@
+namespace = corruption_syndicate_panel
+
+event = { # 面对一些特定情况，设置一个开局事件的解锁方式
+	id = corruption_syndicate_panel.996
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = no
+				has_valid_civic = civic_corruption_syndicate
+				OR = { # 这三个是看如果开局有其他国家的联系时直接在一个月之后解锁建筑
+					has_origin = origin_hegemon # 一方霸主起源
+					has_origin = origin_common_ground # 共同命运起源
+					has_origin = origin_imperial_vassal # 帝国封邑起源
+					# ……思考的话……如果其他mod里也有类似的开局，要么就在这里做兼容，要么就是用通常的方法通过建立联系来解锁了
+				}
+			}
+			set_country_flag = corruption_syndicate_office_unlock
+			country_event = {
+				id = corruption_syndicate_panel.998
+				days = 120
+			}
+		}
+	}
+}
+
+country_event = { # 寻常解锁方式，通过第一次与国家建立交流解锁
+	id = corruption_syndicate_panel.997
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			This = { # this 是建立联系的国家
+				is_ai = no
+				has_valid_civic = civic_corruption_syndicate
+				NOT = { has_country_flag = corruption_syndicate_office_unlock }
+			}
+			From = { # From 是被建立联系的国家
+				is_ai = no
+				has_valid_civic = civic_corruption_syndicate
+				NOT = { has_country_flag = corruption_syndicate_office_unlock }
+			}
+		}
+
+	}
+	immediate = {
+		if = {
+			limit = { This = { has_valid_civic = civic_corruption_syndicate } }
+			This = {
+				set_country_flag = corruption_syndicate_office_unlock
+				country_event = {
+					id = corruption_syndicate_panel.998
+					days = 7
+				}
+			}
+		}
+		if = {
+			limit = { From = { has_valid_civic = civic_corruption_syndicate } }
+			From = { 
+				set_country_flag = corruption_syndicate_office_unlock
+				country_event = {
+					id = corruption_syndicate_panel.998
+					days = 7
+				}
+			}
+		}
+	}
+}
+
+country_event = { # 第一次开设分部时我方告知
+	id = corruption_syndicate_panel.998
+	title = "corruption_syndicate_panel.998.name"
+	desc = "corruption_syndicate_panel.998.desc"
+	picture = GFX_evt_panel_998
+	is_triggered_only = yes
+	option = {
+		name = "corruption_syndicate_panel.998.a"
+		custom_tooltip = "corruption_syndicate_panel.998.a.tooltip"
+	}
+}
+
+country_event = { # 建筑建成，展示GUI并提醒玩家在国家界面可以进行选取。
+	id = corruption_syndicate_panel.999
+	title = contact
+	desc = "corruption_syndicate_panel.999.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_caravaneer_window" # enclave_caravaneer_window
+	custom_gui_option = "enclave_caravaneer_option" # enclave_caravaneer_window
+	picture_event_data = {
+		portrait = npc000
+		room = enclave_curator_room
+	}
+
+	trigger = {
+		has_country_flag = corruption_syndicate_office_unlock
+		not = { has_communications = event_target:corruption_syndicate_panel_country }
+	}
+	immediate = {
+		country_event = { id = corruption_syndicate_panel.1 }
+	}
+	option = {
+		name = "corruption_syndicate_panel.999.a"
+		response_text = "corruption_syndicate_panel.999.a.response"
+	}
+}
+
+country_event = { # 生成空壳国家，与999同时触发
+	id = corruption_syndicate_panel.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { 
+				NOT = { exists = event_target:corruption_syndicate_panel_country } 
+			}
+			create_country = {
+				name = "corruption_syndicate_panel.2.name" # 偷个懒，事件名就是页面名，倒是很合理（或许吧）
+				type = country_corruption_syndicate_panel # 特殊空壳国家类型
+				flag = { # 国旗的设置
+					icon = {
+						category = "kinkylines"
+						file = "Y0_10.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "stripes.dds"
+					}
+					colors = {
+						"beige"
+						"red"
+						"null"
+						"null"
+					}
+				}
+			}
+			last_created_country = {
+				establish_communications_no_message = root # 只和出现在建立交流的国家的国家界面里
+				set_country_flag = corruption_syndicate_panel_country
+				save_global_event_target_as = corruption_syndicate_panel_country
+			}
+		}
+		event_target:corruption_syndicate_panel_country = {
+			establish_communications_no_message = root
+		}
+		save_global_event_target_as = corruption_syndicate_panel_owner # 有疑问在这里，保留着先
+	}
+}
+
+country_event = { # 接入面板事件
+	id = corruption_syndicate_panel.1000
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		from = { # 检测国家是不是控制面板国家
+			is_country_type = country_corruption_syndicate_panel
+			has_country_flag = corruption_syndicate_panel_country
+		}
+		NOT = { has_country_flag = corruption_syndicate_panel_engaged }
+	}
+	immediate = {
+		set_country_flag = corruption_syndicate_panel_engaged
+		country_event = { id = corruption_syndicate_panel.2 }
+	}
+}
+
+country_event = { # 主页面
+	id = corruption_syndicate_panel.2
+	title = "corruption_syndicate_panel.2.name"
+	# 下面这一大堆是进入界面时的随机初始语句
+	desc = "corruption_syndicate_panel.2a.desc"
+	desc = "corruption_syndicate_panel.2b.desc"
+	desc = "corruption_syndicate_panel.2c.desc"
+	desc = "corruption_syndicate_panel.2d.desc"
+	desc = "corruption_syndicate_panel.2e.desc"
+	desc = "corruption_syndicate_panel.2f.desc"
+	desc = "corruption_syndicate_panel.2g.desc"
+	desc = "corruption_syndicate_panel.2h.desc"
+	desc = "corruption_syndicate_panel.2i.desc"
+	desc = "corruption_syndicate_panel.2j.desc"
+	desc = "corruption_syndicate_panel.2k.desc"
+	desc = "corruption_syndicate_panel.2l.desc"
+	desc = "corruption_syndicate_panel.2m.desc"
+	desc = "corruption_syndicate_panel.2n.desc"
+	desc = "corruption_syndicate_panel.2o.desc"
+	desc = "corruption_syndicate_panel.2p.desc"
+	desc = "corruption_syndicate_panel.2q.desc"
+	desc = "corruption_syndicate_panel.2r.desc"
+	desc = {
+		trigger = { has_technology = tech_beauty_theory }
+		text = "corruption_syndicate_panel.2s.desc"
+	}
+	desc = {
+		trigger = { years_passed >= 10 }
+		text = "corruption_syndicate_panel.2t.desc"
+	}
+	desc = {
+		trigger = { is_at_war = yes }
+		text = "corruption_syndicate_panel.2u.desc"
+	}
+
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_caravaneer_window"
+	custom_gui_option =  "enclave_caravaneer_option"
+
+	picture_event_data = {
+		portrait = npc000
+		room = enclave_curator_room
+	}
+	after = {
+		hidden_effect = { remove_country_flag = corruption_syndicate_panel_engaged }
+	}
+####################################
+	option = { # 分部星球列表
+		name = "corruption_syndicate_panel.2.a"
+		custom_tooltip = "corruption_syndicate_panel.2.a.tooltip"
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.3 }
+		}
+	}
+	option = { # 科技管理列表
+		name = "corruption_syndicate_panel.2.b"
+		custom_tooltip = "corruption_syndicate_panel.2.b.tooltip"
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.4 }
+		}
+	}
+	option = { # 聊天（伪）
+		name = "corruption_syndicate_panel.2.c"
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.2 }
+		}
+	}
+	option = { # 离开
+		name =  "corruption_syndicate_panel.exit"
+		default_hide_option = yes
+		hidden_effect = {
+			remove_country_flag = curator_enclave_diplomacy_engaged
+		}
+	}
+}
+
+country_event = {  # 分部星球列表
+	id = corruption_syndicate_panel.3
+	title = "corruption_syndicate_panel.2.a"
+	desc = "corruption_syndicate_panel.3.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_caravaneer_window"
+	custom_gui_option =  "enclave_caravaneer_option"
+	picture_event_data = {
+		portrait = npc000
+		room = enclave_curator_room
+	}
+	after = {
+		hidden_effect = { remove_country_flag = corruption_syndicate_panel_engaged }
+	}
+	immediate = {
+		set_country_flag = corruption_syndicate_panel_engaged
+		office_list_clear = yes # 清理星球列表
+		clear_global_event_target = target_office # 清除上次选中的星球
+		every_country = { # 统计符合条件的星球，并存放到eventtarget中
+			limit = {
+				has_communications = root
+				any_owned_planet = {
+					has_branch_office = yes
+					branch_office_owner = {
+						is_same_empire = root
+					}
+				}
+			}
+			every_owned_planet = {
+				limit = {
+					has_branch_office = yes
+					branch_office_owner = {
+						is_same_empire = root
+					}
+				}
+				office_list_save = yes
+			}
+		}
+	}
+##### boet = branch office country event target
+	option = { trigger = { exists = event_target:boet_001 } name = "boet_001" hidden_effect = { event_target:boet_001 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_002 } name = "boet_002" hidden_effect = { event_target:boet_002 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_003 } name = "boet_003" hidden_effect = { event_target:boet_003 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_004 } name = "boet_004" hidden_effect = { event_target:boet_004 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_005 } name = "boet_005" hidden_effect = { event_target:boet_005 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_006 } name = "boet_006" hidden_effect = { event_target:boet_006 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_007 } name = "boet_007" hidden_effect = { event_target:boet_007 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_008 } name = "boet_008" hidden_effect = { event_target:boet_008 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_009 } name = "boet_009" hidden_effect = { event_target:boet_009 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_010 } name = "boet_010" hidden_effect = { event_target:boet_010 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_011 } name = "boet_011" hidden_effect = { event_target:boet_011 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_012 } name = "boet_012" hidden_effect = { event_target:boet_012 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_013 } name = "boet_013" hidden_effect = { event_target:boet_013 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_014 } name = "boet_014" hidden_effect = { event_target:boet_014 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_015 } name = "boet_015" hidden_effect = { event_target:boet_015 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_016 } name = "boet_016" hidden_effect = { event_target:boet_016 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_017 } name = "boet_017" hidden_effect = { event_target:boet_017 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_018 } name = "boet_018" hidden_effect = { event_target:boet_018 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_019 } name = "boet_019" hidden_effect = { event_target:boet_019 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_020 } name = "boet_020" hidden_effect = { event_target:boet_020 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_021 } name = "boet_021" hidden_effect = { event_target:boet_021 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_022 } name = "boet_022" hidden_effect = { event_target:boet_022 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_023 } name = "boet_023" hidden_effect = { event_target:boet_023 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_024 } name = "boet_024" hidden_effect = { event_target:boet_024 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_025 } name = "boet_025" hidden_effect = { event_target:boet_025 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_026 } name = "boet_026" hidden_effect = { event_target:boet_026 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_027 } name = "boet_027" hidden_effect = { event_target:boet_027 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_028 } name = "boet_028" hidden_effect = { event_target:boet_028 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_029 } name = "boet_029" hidden_effect = { event_target:boet_029 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+	option = { trigger = { exists = event_target:boet_030 } name = "boet_030" hidden_effect = { event_target:boet_030 = { save_global_event_target_as = target_office } country_event = { id = corruption_syndicate_panel.31 } } }
+##########
+	option = { # 返回主页面
+		name = "corruption_syndicate_panel.backtomain"
+		hidden_effect = { country_event = { id = corruption_syndicate_panel.2 } }
+	}
+	option = { # 关闭信号
+		name = "corruption_syndicate_panel.exit"
+		default_hide_option = yes
+	}
+}
+
+# 分部事务处理菜单：
+# 破坏公安系统（耗费淫罪技艺100，效果：如果分部所处星球上具有警署，摧毁星球上的一个警署）
+# 破坏司法系统（耗费淫罪技艺200，效果：如果分部所处星球上具有审判厅，摧毁星球上的一个审判厅）
+# 为军队提供慰安服务（耗费淫罪技艺100，效果：为星球提供debuff：沉迷淫乐的军队） 沉迷淫乐的军队： 防御部队伤害-50% 防御部队生命值-50% 防御部队士气-100%，持续时间为5年
+# 策划独立叛乱（耗费淫罪技艺500，电1000，矿1000，效果：360天后在星球上刷出10支星球所有者国家主体物种的进攻部队，如果成功独立，可以弹出选项选择是否让独立出的国家成为附庸）
+country_event = { # 分部星球的单独界面
+	id = corruption_syndicate_panel.31
+	title = "corruption_syndicate_panel.31.name"
+	desc = "corruption_syndicate_panel.31.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_caravaneer_window"
+	custom_gui_option =  "enclave_caravaneer_option"
+	picture_event_data = {
+		portrait = npc000
+		room = enclave_curator_room
+	}
+	immediate = { set_country_flag = corruption_syndicate_panel_engaged }
+	after = {
+		hidden_effect = { remove_country_flag = corruption_syndicate_panel_engaged }	
+	}
+#####################################################
+	option = { # 破坏公安系统（耗费淫罪技艺100，效果：如果分部所处星球上具有警署，摧毁星球上的一个警署）
+		name = "corruption_syndicate_panel.31.a"
+		allow = {
+			resource_stockpile_compare = {
+				resource = corruption_business_point
+				value >= 50
+			}
+			event_target:target_office = {
+				has_building = building_precinct_house
+			}
+			has_technology = tech_building_unlock_I
+		}
+		add_resource = { corruption_business_point = -50 }
+		event_target:target_office = {
+			remove_building = building_precinct_house
+		}
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.32 }
+		}
+	}
+	option = { # 破坏司法系统（耗费淫罪技艺200，效果：如果分部所处星球上具有审判厅，摧毁星球上的一个审判厅）
+		name = "corruption_syndicate_panel.31.b"
+		allow = {
+			resource_stockpile_compare = {
+				resource = corruption_business_point
+				value >= 200
+			}
+			event_target:target_office = {
+				has_building = building_hall_judgment
+			}
+			has_technology = tech_building_unlock_II
+		}
+		add_resource = { corruption_business_point = -200 }
+		event_target:target_office = {
+			remove_building = building_hall_judgment
+		}
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.32 }
+		}
+		# 可以塞个事件
+	}
+	option = { # 开放移民申请（花费100技艺） allow：分部所在殖民地的人口数量大于100 将10个人口转移到首都
+		name = "corruption_syndicate_panel.31.c"
+		allow = {
+			resource_stockpile_compare = {
+				resource = corruption_business_point
+				value >= 100
+			}
+			event_target:target_office = {
+				num_pops > 100
+			}
+			custom_tooltip_fail = {
+				text = "corruption_syndicate_panel.kidnapped"
+				event_target:target_office = {
+					NOT = { has_planet_flag = pop_kidnapped_recent }
+				}
+			} 
+		}
+		add_resource = { corruption_business_point = -100 }
+		hidden_effect = {
+			event_target:target_office = {
+				planet_event = { id = corruption_syndicate_panel.33 days = 30 }
+			}
+			country_event = { id = corruption_syndicate_panel.32 }
+		}
+	} 
+	option = { # 为军队提供慰安服务（耗费淫罪技艺300，效果：为星球提供debuff：沉迷淫乐的军队，持续时间为5年）
+		name = "corruption_syndicate_panel.31.d"
+		allow = {
+			resource_stockpile_compare = {
+				resource = corruption_business_point
+				value >= 300
+			}
+			event_target:target_office = {
+				NOT = { has_modifier = lust_addicted_army }
+			}
+		}
+		add_resource = { corruption_business_point = -300 }
+		event_target:target_office = {
+			add_modifier = {
+				modifier = lust_addicted_army 
+				days = 1800
+			}
+		}
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.32 }
+		}
+	}
+	option = { # 策划独立叛乱（耗费淫罪技艺500，电1000，矿1000，效果：360天后在星球上刷出10支星球所有者国家主体物种的进攻部队，如果成功独立，可以弹出选项选择是否让独立出的国家成为附庸）
+		name = "corruption_syndicate_panel.31.e"
+		custom_tooltip = corruption_syndicate_panel.31.e.tooltip
+		allow = {
+			resource_stockpile_compare = {
+				resource = corruption_business_point
+				value >= 300
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1000
+			}
+			resource_stockpile_compare = {
+				resource = minerals
+				value >= 1000
+			}
+			event_target:target_office = {
+				NOR = {  
+					has_planet_flag = revolted_recently@root
+					root = { is_overlord_to = prev.owner } # 如果星球的拥有者已经是你的附庸，则不可启用
+				}
+			}
+			has_technology = tech_building_unlock_III
+		}
+		add_resource = { 
+			corruption_business_point = -300 
+			energy = -1000
+			minerals = -1000
+		}
+		hidden_effect = {
+			event_target:target_office = {
+				planet_event = {
+					id = corruption_syndicate_panel.36
+				}
+				set_timed_planet_flag = {
+					flag = revolted_recently@root
+					days = 360
+				}
+			}
+			country_event = { id = corruption_syndicate_panel.32 }
+		}
+	}
+#####################################################
+	option = { # 返回上一级
+		name = "corruption_syndicate_panel.back"
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.3 }
+		}
+	}
+	option = { # 返回主页面
+		name = "corruption_syndicate_panel.backtomain"
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.2 }
+			clear_global_event_target = target_office # 清除上次选中的分部
+		}
+	}
+	option = { # 关闭信号
+		name = "corruption_syndicate_panel.exit"
+		default_hide_option = yes
+		hidden_effect = {
+			clear_global_event_target = target_office # 清除上次选中的分部
+		}
+	}
+}
+
+country_event = { # 分部行动执行后的弹窗
+	id = corruption_syndicate_panel.32
+	title = "corruption_syndicate_panel.32.name"
+	desc = "corruption_syndicate_panel.32.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_caravaneer_window"
+	custom_gui_option =  "enclave_caravaneer_option"
+	picture_event_data = {
+		portrait = npc000
+		room = enclave_curator_room
+	}
+	immediate = {
+		set_country_flag = corruption_syndicate_panel_engaged
+	}
+	after = {
+		hidden_effect = { remove_country_flag = corruption_syndicate_panel_engaged }
+	}
+
+#####################################################
+	option = { # 返回上一级
+		name = "corruption_syndicate_panel.back"
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.31 }
+		}
+	}
+	option = { # 返回主页面
+		name = "corruption_syndicate_panel.backtomain"
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.2 }
+		}
+	}
+	option = { # 关闭信号
+		name = "corruption_syndicate_panel.exit"
+		default_hide_option = yes
+	}
+}
+
+
+# 人口转移
+planet_event = {
+	id = corruption_syndicate_panel.33
+	hide_window = yes
+	pre_triggers = {
+		has_owner = yes
+		has_ground_combat = no
+	}
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = {
+			flag = pop_kidnapped_recent
+			days = 360
+		}
+		save_event_target_as = abduction_planet
+		branch_office_owner.capital_scope = {
+			save_event_target_as = relocated_planet
+		}
+		while = {
+			count = 10
+			random_owned_pop = { save_event_target_as = kidnapped_pop }
+			branch_office_owner = {
+				capital_scope = {
+					create_pop = { species = event_target:kidnapped_pop.species }
+				}
+			}
+			event_target:kidnapped_pop = { kill_pop = yes }
+		}
+		planet_event = { id = corruption_syndicate_panel.34 } # 被拐卖星球的事件
+		branch_office_owner.capital_scope = {
+			planet_event = { id = corruption_syndicate_panel.35 } # 人口到达的星球事件
+		}
+	}
+}
+planet_event = { # 被转移的星球的事件
+	id = corruption_syndicate_panel.34
+	title = "corruption_syndicate_panel.34.name"
+	desc = "corruption_syndicate_panel.34.desc"
+	picture = GFX_evt_panel_34
+	is_triggered_only = yes
+	option = { name = "corruption_syndicate_panel.34.a" }
+}
+planet_event = { # 人口到达的星球事件
+	id = corruption_syndicate_panel.35
+	title = "corruption_syndicate_panel.35.name"
+	desc = "corruption_syndicate_panel.35.desc"
+	picture = GFX_evt_panel_34
+	is_triggered_only = yes
+	option = { name = "corruption_syndicate_panel.35.a" }
+}
+
+# 策划独立叛乱效果，如果成功独立，可以弹出选项选择是否让独立出的国家成为附庸
+planet_event = {
+	id = corruption_syndicate_panel.36
+	is_triggered_only = yes
+
+	pre_triggers = {
+		has_owner = yes
+		has_ground_combat = no
+	}
+	
+	title = "corruption_syndicate_panel.36.name"
+	desc = "corruption_syndicate_panel.36.desc"
+	picture = GFX_evt_alien_nature
+	immediate = {
+		set_planet_flag = corruption_syndicate_revolt_planet ###
+		owner_main_species = { save_event_target_as = revolt_species }
+		set_variable = {
+			which = rebel_armies_var
+			value = 0
+		}
+		every_owned_pop = { # 按特殊犯罪岗位数量生成 肉欲雇佣兵+5 腐败执法者+3 腐败官僚+2 嫖客+1
+			limit = { # 前置判断，应该能减少遍历下面if的次数
+				OR = {
+					has_job = pornographic_mercenary
+					has_job = corrupted_enforcer
+					has_job = corrupted_politician
+					has_job = whoremaster
+				}
+			}
+			if = { # 单个检测
+				limit = { has_job = pornographic_mercenary }
+				planet = {
+					change_variable = {
+						which = rebel_armies_var
+						value = 5
+					}
+				}
+			}
+			else_if = { 
+				limit = { has_job = corrupted_enforcer }
+				planet = {
+					change_variable = {
+						which = rebel_armies_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = { has_job = corrupted_politician }
+				planet = {
+					change_variable = {
+						which = rebel_armies_var
+						value = 2
+					}
+				}
+			}
+			else_if = {
+				limit = {has_job = whoremaster }
+				planet = {
+					change_variable = {
+						which = rebel_armies_var
+						value = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = rebel_armies_var
+					value = 0
+				}
+			}
+			change_variable = {
+				which = rebel_armies_var
+				value = 1
+			}
+		}
+		create_rebels = {
+			species = event_target:revolt_species
+			ethos = random
+			authority = auth_oligarchic
+			origin = "origin_separatists"
+			name = random
+			flag = random
+			effect = {
+				if = {
+					limit = { has_trait = trait_necrophage }
+					set_origin = origin_necrophage
+				}
+				establish_communications_no_message = root.owner
+				set_country_flag = standard_unrest_rebels
+				save_event_target_as = revolt_country
+				root = {
+					owner = {
+						every_relation = { establish_communications_no_message = prevprevprev }
+					}
+				}
+			}
+		}
+		while = {
+			count = rebel_armies_var
+			create_army = {
+				owner = event_target:revolt_country
+				species = event_target:revolt_species
+				type = assault_army
+			}
+		}
+	}
+	option = { name = "corruption_syndicate_panel.36.a" }
+}
+
+# 反抗成功，入侵失败
+# Root = country, planet owner
+# From = country, attack leader
+# FromFrom = planet
+country_event = { # 防守方
+	id = corruption_syndicate_panel.37
+	is_triggered_only = yes
+	location = FROMFROM
+	title = "corruption_syndicate_panel.37.name"
+	desc = "corruption_syndicate_panel.37.desc"
+	picture = GFX_evt_announcement
+	trigger = {
+		fromfrom = { 
+			has_planet_flag = corruption_syndicate_revolt_planet
+			has_branch_office = yes 
+		}
+	}
+
+	immediate = {
+		fromfrom = { 
+			save_event_target_as = revolted_planet
+			remove_planet_flag = corruption_syndicate_revolt_planet 
+			branch_office_owner = { country_event = { id = corruption_syndicate_panel.38 days = 7 } } # 向分部拥有者（我方）通告
+		}
+	}
+	option = { name = ACKNOWLEDGED }
+}
+country_event = { # 向分部拥有者（我方）通告
+	id = corruption_syndicate_panel.38
+	is_triggered_only = yes
+	title = "corruption_syndicate_panel.38.name"
+	desc = "corruption_syndicate_panel.38.desc"
+	picture = GFX_evt_announcement
+	option = { name = corruption_syndicate_panel.38.a }
+}
+
+# 反抗失败，入侵者成功
+# Triggers country_event for the defender upon defeat
+# This = country, planet owner
+# From = country, attack leader
+# FromFrom = planet
+country_event = { # 防守方
+	id = corruption_syndicate_panel.39
+	is_triggered_only = yes
+	title = "corruption_syndicate_panel.39.name"
+	desc = "corruption_syndicate_panel.39.desc"
+	picture = GFX_evt_surrender
+	option = { name = ACKNOWLEDGED }
+}
+
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+country_event = { # 入侵方（独立出来的国家）（因为是ai国家，就不做显性事件了）
+	id = corruption_syndicate_panel.40 
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		fromfrom = { 
+			has_planet_flag = corruption_syndicate_revolt_planet
+			has_branch_office = yes 
+		}
+	}
+	immediate = {
+		fromfrom = {
+			save_event_target_as = revolted_planet
+			remove_planet_flag = corruption_syndicate_revolt_planet
+			branch_office_owner = { country_event = { id = corruption_syndicate_panel.41 days = 7 } } # 向分部拥有者（我方）通告
+			close_branch_office = yes
+		}
+	}
+}
+country_event = { # 分部拥有者（我方） 抉择
+	id = corruption_syndicate_panel.41
+	is_triggered_only = yes
+	title = "corruption_syndicate_panel.41.name"
+	desc = "corruption_syndicate_panel.41.desc"
+	picture = GFX_evt_surrender
+	option = {
+		trigger = { is_subject = no }
+		name = "corruption_syndicate_panel.41.a"
+		event_target:revolted_planet.owner = {
+			set_subject_of = { # 不用管，它就这样了，也就这里报错了，官方摆烂我有什么办法
+				who = root
+				preset = preset_tributary # 改成了普通朝贡国
+			}
+		}
+	}
+	option = {
+		name = "corruption_syndicate_panel.41.b"
+	}
+}
+
+# 堕落企业办公室的建筑升级选项：
+# 1级建筑解锁无前置，
+# 2级建筑解锁选项需要科技：性奴调教，
+# 3级建筑解锁选项需要科技：色情扩张协议；
+
+country_event = { # 科技管理列表
+	id = corruption_syndicate_panel.4
+	title = "corruption_syndicate_panel.2.b"
+	desc = "corruption_syndicate_panel.4.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_caravaneer_window"
+	custom_gui_option =  "enclave_caravaneer_option"
+	picture_event_data = {
+		portrait = npc000
+		room = enclave_curator_room
+	}
+
+	immediate = {
+		set_country_flag = corruption_syndicate_panel_engaged
+	}
+	after = {
+		hidden_effect = { remove_country_flag = corruption_syndicate_panel_engaged }
+	}
+
+#####################################################
+	option = { # 解锁一级建筑
+		name = "corruption_syndicate_panel.4.a"
+		trigger = {
+			NOT = { has_technology = tech_building_unlock_I }
+		}
+		allow = {
+			resource_stockpile_compare = { resource = corruption_business_point value >= 100 }
+			custom_tooltip_fail = {
+				text = "corruption_syndicate_panel.alreadyunlock"
+				NOT = { has_tech_option = tech_building_unlock_I }
+			}
+		}
+		add_resource = { corruption_business_point = -100 }
+		add_research_option = tech_building_unlock_I
+		hidden_effect = {
+			add_tech_progress = {
+				tech = tech_building_unlock_I
+				progress = 0.1
+			}
+			country_event = { id = corruption_syndicate_panel.5 }
+		}
+	}
+	option = { # 解锁二级建筑
+		name = "corruption_syndicate_panel.4.b"
+		trigger = {
+			NOT = { has_technology = tech_building_unlock_II }
+		}
+		allow = {
+			resource_stockpile_compare = { resource = corruption_business_point value >= 250 }
+			has_technology = tech_building_unlock_I
+			has_technology = tech_alpha_aphrodisia # 拥有科技：阿尔法素
+			custom_tooltip_fail = {
+				text = "corruption_syndicate_panel.alreadyunlock"
+				NOT = { has_tech_option = tech_building_unlock_II }
+			}
+		}
+		add_resource = { corruption_business_point = -250 }
+		add_research_option = tech_building_unlock_II
+		hidden_effect = {
+			add_tech_progress = {
+				tech = tech_building_unlock_II
+				progress = 0.1
+			}
+			country_event = { id = corruption_syndicate_panel.5 }
+		}
+	}
+	option = { # 解锁三级建筑
+		name = "corruption_syndicate_panel.4.c"
+		trigger = {
+			NOT = { has_technology = tech_building_unlock_III }
+		}
+		allow = { # 特殊资源足够时可选择
+			resource_stockpile_compare = { resource = corruption_business_point value >= 500 }
+			has_technology = tech_building_unlock_II
+			has_technology = tech_spirit_control_theory # 需要科技：精神控制
+			has_technology = tech_erotic_expansion_agreement # 需要科技：色情扩张协议
+			custom_tooltip_fail = {
+				text = "corruption_syndicate_panel.alreadyunlock"
+				NOT = { has_tech_option = tech_building_unlock_III }
+			}
+		}
+		add_resource = { corruption_business_point = -500 }
+		add_research_option = tech_building_unlock_III
+		hidden_effect = {
+			add_tech_progress = {
+				tech = tech_building_unlock_III
+				progress = 0.1
+			}
+			country_event = { id = corruption_syndicate_panel.5 }
+		}
+	}
+	# 开展研习淫罪技艺活动
+	# 效果 花费影响力，兑换等量淫罪技艺（100，200，500，1000）
+	option = {
+		name = "corruption_syndicate_panel.4.d"
+		trigger = { resource_stockpile_compare = { resource = influence value >= 100 } }
+		add_resource = {
+			influence = -100
+			corruption_business_point = 100
+		}
+		hidden_effect = { country_event = { id = corruption_syndicate_panel.4 } }
+	}
+	option = {
+		name = "corruption_syndicate_panel.4.e"
+		trigger = { resource_stockpile_compare = { resource = influence value >= 200 } }
+		add_resource = {
+			influence = -200
+			corruption_business_point = 200
+		}
+		hidden_effect = { country_event = { id = corruption_syndicate_panel.4 } }
+	}
+	option = {
+		name = "corruption_syndicate_panel.4.f"
+		trigger = { resource_stockpile_compare = { resource = influence value >= 500 } }
+		add_resource = {
+			influence = -500
+			corruption_business_point = 500
+		}
+		hidden_effect = { country_event = { id = corruption_syndicate_panel.4 } }
+	}
+	option = {
+		name = "corruption_syndicate_panel.4.g"
+		trigger = { resource_stockpile_compare = { resource = influence value >= 1000 } }
+		add_resource = {
+			influence = -1000
+			corruption_business_point = 1000
+		}
+		hidden_effect = { country_event = { id = corruption_syndicate_panel.4 } }
+	}
+#####################################################
+	option = { # 返回主页面
+		name = "corruption_syndicate_panel.backtomain"
+		hidden_effect = { country_event = { id = corruption_syndicate_panel.2 } }
+	}
+	option = { # 关闭信号
+		name = "corruption_syndicate_panel.exit"
+		default_hide_option = yes
+	}
+}
+
+country_event = { # 科技和项目确认界面
+	id = corruption_syndicate_panel.5
+	title = "corruption_syndicate_panel.2.b"
+	desc = "corruption_syndicate_panel.5.desc"
+
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_caravaneer_window"
+	custom_gui_option =  "enclave_caravaneer_option"
+	picture_event_data = {
+		portrait = npc000
+		room = enclave_curator_room
+	}
+	immediate = {
+		set_country_flag = corruption_syndicate_panel_engaged
+	}
+	after = {
+		hidden_effect = { remove_country_flag = corruption_syndicate_panel_engaged }
+	}
+
+#####################################################
+	option = { # 返回上一级
+		name = "corruption_syndicate_panel.back"
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.4 }
+		}
+	}
+	option = { # 返回主页面
+		name = "corruption_syndicate_panel.backtomain"
+		hidden_effect = {
+			country_event = { id = corruption_syndicate_panel.2 }
+		}
+	}
+	option = { # 关闭信号
+		name = "corruption_syndicate_panel.exit"
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+# ROOT	Country
+# THIS	Country
+
+	id = corruption_syndicate_panel.888
+	is_triggered_only = yes
+	option = {
+		name = corruption_syndicate_panel.888.a
+		
+		
+		# Supports scopes: Planet
+		# ROOT	Country
+		# THIS	Country
+		# "this" 指向的是 "Country"类而不是"Planet"类所以报错
+		planet_event = {
+			id = corruption_syndicate_buildings.0
+		}
+	}
+	option = {
+		name = corruption_syndicate_panel.888.a
+		# this.capital_scope
+		# 这里的this调用的是 # ROOT	Country 里的this， 也就是"Country"目标
+							# THIS	Country
+		# capital_scope指的是首都星球，其本身是"Planet"类。
+		# 所以this.capital_scope的目标是this（国家）的首都，是个planet类。
+		# 所以写下此条后，这一条代码里面的作用域属性为
+		# this planet （进行作用域转换后，当前属性呗目标属性，即planet属性替换）
+		# Root country（root永远指定初始作用域）
+		# prev country（因为进行过一次作用域转换，会自动存储上一级作用域的属性，在这里即为country
+
+		this.capital_scope = {
+
+			planet_event = {
+				id = corruption_syndicate_buildings.0
+			}
+		}
+	}
+}

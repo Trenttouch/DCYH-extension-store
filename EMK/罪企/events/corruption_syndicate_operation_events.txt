@@ -1,0 +1,427 @@
+namespace = corruption_syndicate_operation
+
+# this = operation; from = target (country)
+
+# 促进战略收缩（仅对企业政体国家可用）
+# 为目标国家添加分部花费+500%的帝国修正，持续10年
+espionage_operation_event = {
+	id = corruption_syndicate_operation.101
+	title = corruption_syndicate_operation.101.name
+	desc = corruption_syndicate_operation.101.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_101
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.102
+	title = corruption_syndicate_operation.102.name
+	desc = corruption_syndicate_operation.102.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_101
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.103
+	title = corruption_syndicate_operation.103.name
+	desc = corruption_syndicate_operation.103.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_103
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.104
+	title = corruption_syndicate_operation.104.name
+	desc = corruption_syndicate_operation.104.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_103
+	show_sound = event_default
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			add_modifier = {
+				modifier = strategic_contraction
+				years = 10
+			}
+		}
+	}
+	option = {
+		name = ACKNOWLEDGED
+		this = {
+			spynetwork = {
+				add_spy_network_level = -15
+			}
+		}
+	}
+}
+
+# 剥离冗余资产（仅对企业政体国家可用）
+# 如果成功：关闭目标国家设立的所有分部
+espionage_operation_event = {
+	id = corruption_syndicate_operation.201
+	title = corruption_syndicate_operation.201.name
+	desc = corruption_syndicate_operation.201.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_201
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.202
+	title = corruption_syndicate_operation.202.name
+	desc = corruption_syndicate_operation.202.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_201
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.203
+	title = corruption_syndicate_operation.203.name
+	desc = corruption_syndicate_operation.203.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_201
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.204
+	title = corruption_syndicate_operation.204.name
+	desc = corruption_syndicate_operation.204.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_201
+	show_sound = event_default
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = { # 这段limit和下一段重复了……但两段都算上的话会稍微减少一点运算吗？……或许吧……
+				any_owned_planet = {
+					has_branch_office = yes
+					branch_office_owner = { is_same_empire = from }
+				}
+			}
+			every_owned_planet = {
+				limit = {
+					has_branch_office = yes
+					branch_office_owner = { is_same_empire = from }
+				}
+				close_branch_office = yes
+			}
+		}
+	}
+	option = {
+		name = ACKNOWLEDGED
+		this = {
+			spynetwork = {
+				add_spy_network_level = -20
+			}
+		}
+	}
+}
+
+# 煽动国有化改组（仅对企业政体国家可用）
+# 如果成功：将目标国家的政体改为寡头政体，移除原有的国策，增加商人工会、影子内阁、寻乐者国策
+espionage_operation_event = {
+	id = corruption_syndicate_operation.301
+	title = corruption_syndicate_operation.301.name
+	desc = corruption_syndicate_operation.301.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_301
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.302
+	title = corruption_syndicate_operation.302.name
+	desc = corruption_syndicate_operation.302.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_301
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.303
+	title = corruption_syndicate_operation.303.name
+	desc = corruption_syndicate_operation.303.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_303
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.304
+	title = corruption_syndicate_operation.304.name
+	desc = corruption_syndicate_operation.304.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_304
+	show_sound = event_default
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			change_government = {
+				authority = auth_oligarchic
+				civics = {
+					civic = civic_merchant_guilds
+					civic = civic_shadow_council
+					civic = civic_pleasure_seekers
+				}
+				remove_invalid_civics = yes
+			}
+		}
+	}
+	option = {
+		name = ACKNOWLEDGED
+		this = {
+			spynetwork = {
+				add_spy_network_level = -40
+			}
+		}
+	}
+}
+
+# 将国家思潮往和平主义转移
+espionage_operation_event = {
+	id = corruption_syndicate_operation.401
+	title = corruption_syndicate_operation.401.name
+	desc = corruption_syndicate_operation.401.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_401
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.402
+	title = corruption_syndicate_operation.402.name
+	desc = corruption_syndicate_operation.402.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_401
+	show_sound = event_default
+	is_triggered_only = yes
+	immediate = {
+		from = { # 目标
+			shift_ethic = ethic_pacifist
+		}
+	}
+	option = {
+		name = ACKNOWLEDGED
+		this = {
+			spynetwork = {
+				add_spy_network_level = -20
+			}
+		}
+	}
+}
+
+# 将国家思潮往亲外主义转移
+espionage_operation_event = {
+	id = corruption_syndicate_operation.501
+	title = corruption_syndicate_operation.501.name
+	desc = corruption_syndicate_operation.501.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_401
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.502
+	title = corruption_syndicate_operation.502.name
+	desc = corruption_syndicate_operation.502.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_401
+	show_sound = event_default
+	is_triggered_only = yes
+	immediate = {
+		from = { # 目标
+			shift_ethic = ethic_xenophile
+		}
+	}
+	option = {
+		name = ACKNOWLEDGED
+		this = {
+			spynetwork = {
+				add_spy_network_level = -20
+			}
+		}
+	}
+}
+
+# 内循环
+espionage_operation_event = {
+	id = corruption_syndicate_operation.601
+	title = corruption_syndicate_operation.601.name
+	desc = corruption_syndicate_operation.601.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_601
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.602
+	title = corruption_syndicate_operation.602.name
+	desc = corruption_syndicate_operation.602.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_602
+	show_sound = event_default
+	is_triggered_only = yes
+	immediate = {
+		from = { # 目标
+			add_modifier = {
+				modifier = internal_company_cycle
+				days = -1
+			}
+		}
+	}
+	option = {
+		name = ACKNOWLEDGED
+		this = {
+			spynetwork = {
+				add_spy_network_level = -15
+			}
+		}
+	}
+}
+
+# 摧毁军用舰队
+espionage_operation_event = {
+	id = corruption_syndicate_operation.701
+	title = corruption_syndicate_operation.701.name
+	desc = corruption_syndicate_operation.701.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_701
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.702
+	title = corruption_syndicate_operation.702.name
+	desc = corruption_syndicate_operation.702.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_701
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.703
+	title = corruption_syndicate_operation.703.name
+	desc = corruption_syndicate_operation.703.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_703
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.704
+	title = corruption_syndicate_operation.704.name
+	desc = corruption_syndicate_operation.704.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_703
+	show_sound = event_default
+	is_triggered_only = yes
+	immediate = {
+		from = { # 目标
+			every_owned_fleet = { # 逗比说全炸掉，我觉得……蛮离谱的，本来随机炸掉一个就可能够恶心了（
+				limit = {
+					any_owned_ship = {
+						is_ship_class = shipclass_military
+					}
+				}
+				destroy_fleet = this
+			}
+		}
+	}
+	option = {
+		name = ACKNOWLEDGED
+		this = {
+			spynetwork = {
+				add_spy_network_level = -40
+			}
+		}
+	}
+}
+
+# 摧毁空间站
+espionage_operation_event = {
+	id = corruption_syndicate_operation.801
+	title = corruption_syndicate_operation.801.name
+	desc = corruption_syndicate_operation.801.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_801
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.802
+	title = corruption_syndicate_operation.802.name
+	desc = corruption_syndicate_operation.802.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_801
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.803
+	title = corruption_syndicate_operation.803.name
+	desc = corruption_syndicate_operation.803.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_803
+	show_sound = event_default
+	is_triggered_only = yes
+	option = { name = ACKNOWLEDGED }
+}
+espionage_operation_event = {
+	id = corruption_syndicate_operation.804
+	title = corruption_syndicate_operation.804.name
+	desc = corruption_syndicate_operation.804.desc
+	espionage_operation = yes
+	picture = GFX_evt_syndicate_operation_803
+	show_sound = event_default
+	is_triggered_only = yes
+	immediate = {
+		from = { # 目标
+			every_system_within_border = { # 逗比说全炸掉，我觉得……蛮离谱的，本来随机炸掉一个就可能够恶心了（
+				limit = {
+					NOT = { any_system_planet = { is_owned_by = prev.owner } }
+				}
+				every_fleet_in_system = {
+					limit = {
+						OR = {
+							is_ship_size = starbase_outpost
+							is_ship_size = starbase_starport
+							is_ship_size = starbase_starhold
+							is_ship_size = starbase_starfortress
+							is_ship_size = starbase_citadel
+						}
+					}
+					destroy_fleet = this
+				}
+			}
+		}
+	}
+	option = {
+		name = ACKNOWLEDGED
+		this = {
+			spynetwork = {
+				add_spy_network_level = -40
+			}
+		}
+	}
+}

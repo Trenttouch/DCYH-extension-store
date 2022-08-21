@@ -1,0 +1,13 @@
+gov_corruption_syndicate = {
+	ruler_title = RT_CEO_FEMALE
+	
+	should_force_rename = yes
+
+	possible = {
+		has_valid_civic = civic_corruption_syndicate
+	}
+
+	weight = {
+		base = 100000
+	}
+}

@@ -1,0 +1,65 @@
+office_list_clear = { # 这两段参考的是更多巨构用来存储和清理event_target的方法 # boet = branch office country event target
+	if = { limit = { exists = event_target:boet_001 } clear_global_event_target = boet_001 }
+	if = { limit = { exists = event_target:boet_002 } clear_global_event_target = boet_002 }
+	if = { limit = { exists = event_target:boet_003 } clear_global_event_target = boet_003 }
+	if = { limit = { exists = event_target:boet_004 } clear_global_event_target = boet_004 }
+	if = { limit = { exists = event_target:boet_005 } clear_global_event_target = boet_005 }
+	if = { limit = { exists = event_target:boet_006 } clear_global_event_target = boet_006 }
+	if = { limit = { exists = event_target:boet_007 } clear_global_event_target = boet_007 }
+	if = { limit = { exists = event_target:boet_008 } clear_global_event_target = boet_008 }
+	if = { limit = { exists = event_target:boet_009 } clear_global_event_target = boet_009 }
+	if = { limit = { exists = event_target:boet_010 } clear_global_event_target = boet_010 }
+	if = { limit = { exists = event_target:boet_011 } clear_global_event_target = boet_011 }
+	if = { limit = { exists = event_target:boet_012 } clear_global_event_target = boet_012 }
+	if = { limit = { exists = event_target:boet_013 } clear_global_event_target = boet_013 }
+	if = { limit = { exists = event_target:boet_014 } clear_global_event_target = boet_014 }
+	if = { limit = { exists = event_target:boet_015 } clear_global_event_target = boet_015 }
+	if = { limit = { exists = event_target:boet_016 } clear_global_event_target = boet_016 }
+	if = { limit = { exists = event_target:boet_017 } clear_global_event_target = boet_017 }
+	if = { limit = { exists = event_target:boet_018 } clear_global_event_target = boet_018 }
+	if = { limit = { exists = event_target:boet_019 } clear_global_event_target = boet_019 }
+	if = { limit = { exists = event_target:boet_020 } clear_global_event_target = boet_020 }
+	if = { limit = { exists = event_target:boet_021 } clear_global_event_target = boet_021 }
+	if = { limit = { exists = event_target:boet_022 } clear_global_event_target = boet_022 }
+	if = { limit = { exists = event_target:boet_023 } clear_global_event_target = boet_023 }
+	if = { limit = { exists = event_target:boet_024 } clear_global_event_target = boet_024 }
+	if = { limit = { exists = event_target:boet_025 } clear_global_event_target = boet_025 }
+	if = { limit = { exists = event_target:boet_026 } clear_global_event_target = boet_026 }
+	if = { limit = { exists = event_target:boet_027 } clear_global_event_target = boet_027 }
+	if = { limit = { exists = event_target:boet_028 } clear_global_event_target = boet_028 }
+	if = { limit = { exists = event_target:boet_029 } clear_global_event_target = boet_029 }
+	if = { limit = { exists = event_target:boet_030 } clear_global_event_target = boet_030 }
+}
+
+office_list_save = { # 这两段参考的是更多巨构用来存储和清理event_target的方法 # boet = branch office country event target
+	if = {		limit = { NOT = { exists = event_target:boet_001 } } save_global_event_target_as = boet_001 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_002 } } save_global_event_target_as = boet_002 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_003 } } save_global_event_target_as = boet_003 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_004 } } save_global_event_target_as = boet_004 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_005 } } save_global_event_target_as = boet_005 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_006 } } save_global_event_target_as = boet_006 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_007 } } save_global_event_target_as = boet_007 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_008 } } save_global_event_target_as = boet_008 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_009 } } save_global_event_target_as = boet_009 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_010 } } save_global_event_target_as = boet_010 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_011 } } save_global_event_target_as = boet_011 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_012 } } save_global_event_target_as = boet_012 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_013 } } save_global_event_target_as = boet_013 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_014 } } save_global_event_target_as = boet_014 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_015 } } save_global_event_target_as = boet_015 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_016 } } save_global_event_target_as = boet_016 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_017 } } save_global_event_target_as = boet_017 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_018 } } save_global_event_target_as = boet_018 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_019 } } save_global_event_target_as = boet_019 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_020 } } save_global_event_target_as = boet_020 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_021 } } save_global_event_target_as = boet_021 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_022 } } save_global_event_target_as = boet_022 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_023 } } save_global_event_target_as = boet_023 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_024 } } save_global_event_target_as = boet_024 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_025 } } save_global_event_target_as = boet_025 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_026 } } save_global_event_target_as = boet_026 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_027 } } save_global_event_target_as = boet_027 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_028 } } save_global_event_target_as = boet_028 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_029 } } save_global_event_target_as = boet_029 }
+	else_if = {	limit = { NOT = { exists = event_target:boet_030 } } save_global_event_target_as = boet_030 }
+}

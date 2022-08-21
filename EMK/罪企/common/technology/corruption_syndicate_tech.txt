@@ -1,0 +1,53 @@
+# @tier1cost2 = 750
+# @tier2cost2 = 2000
+# @tier3cost2 = 5000
+# @tier4cost2 = 10000
+# @tier5cost2 = 17500
+
+# 一级建筑科技解锁
+tech_building_unlock_I = {
+	cost = @tier1cost1
+	area = society
+	category = { lust }
+	tier = 0
+	is_rare = no
+	ai_update_type = all
+	weight = 0
+
+	modifier = {
+		show_only_custom_tooltip = no
+		custom_tooltip = "tech_building_unlock_I_modi"
+	}
+}
+
+# 二级建筑科技解锁
+tech_building_unlock_II = {
+	cost = @tier2cost2
+	area = society
+	category = { lust }
+	tier = 0
+	is_rare = no
+	ai_update_type = all
+	weight = 0
+
+	modifier = {
+		show_only_custom_tooltip = no
+		custom_tooltip = "tech_building_unlock_II_modi"
+	}
+}
+
+# 三级建筑科技解锁
+tech_building_unlock_III = {
+	cost = @tier4cost2
+	area = society
+	category = { lust }
+	tier = 0
+	is_rare = yes
+	ai_update_type = all
+	weight = 0
+
+	modifier = {
+		show_only_custom_tooltip = no
+		custom_tooltip = "tech_building_unlock_III_modi"
+	}
+}
